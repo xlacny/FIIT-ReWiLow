@@ -5,7 +5,6 @@
 
 \documentclass[11pt]{article}
 
-\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 
 %LANGUAGE
@@ -34,6 +33,7 @@
 \usepackage{paralist} 
 \usepackage{verbatim} 
 \usepackage{subfig} 
+\usepackage{float}
 
 % HEADERS & FOOTERS
 \usepackage{fancyhdr}
@@ -60,38 +60,46 @@
 
 \section{\bf Formulár VV-A}
 
-\subsection*{\bf A1}
+\subsection*{\bf A1}  %TOBIAS
 \subsection{Evidenčné číslo projektu}
 \qquad 01
 \subsection{Dátum podania}
 \qquad 5. novembra 2025
-\subsection*{\bf A2}
-\subsection*{\bf A2}
-\begin{table}[!h]
+\subsection*{\bf A2} %ADAM
+\begin{table}[H]
 \centering
 \caption{Základné informácie o riešiteľskej organizácii / Basic Information on Participating Organization}
 \label{tab:organizacia}
-\begin{tabularx}{\linewidth}{|>{\hsize=0.08\hsize}X|>{\hsize=0.42\hsize}X|>{\hsize=0.5\hsize}X|}
+\begin{tabularx}{\linewidth}{|l|l|X|}
 \hline
 \textbf{} & \textbf{Položka (SVK / ENG)} & \textbf{Vyplnená hodnota (SVK / ENG)} \\
 \hline
 \multicolumn{3}{|l|}{\textbf{Žiadateľ / Applicant}} \\
 \hline
 01 & \textbf{Názov organizácie} / \textbf{Name of the organization} & Slovenská technická univerzita v Bratislave – Fakulta informatiky a informačných technológií \\
+\hline \\
+\end{tabularx}
+\end{table}
+\subsection*{\bf A3} %ADAM
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{|l|l|X|}
 \hline
-\subsection*{\bf A3}
-\subsection*{\bf A4}
+01 & AAAA \\
+\hline
 \end{tabularx}
 \end{table}
 
+\subsection*{\bf A4} %ADAM
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{|l|l|X|}
+\hline
+01 & AAAA \\
+\hline
+\end{tabularx}
+\end{table}
 
-% ===================================================================
-% BLOK PRE FORMULÁR VV-B (štýl podľa kolegu)
-% Vložte toto do vášho .tex súboru
-% ===================================================================
-\section{\bf Formulár VV-B}
-
-\begin{table}[!h]
+\section{\bf Formulár VV-B} %ARSENII
+\begin{table}[H]
 \centering
 \caption{Ciele, zámery a výstupy projektu / Project objectives, aims and outputs}
 \label{tab:vv-b_ciele}
@@ -116,6 +124,11 @@ Projekt dosiahne \textbf{TRL 3} (Analytické potvrdenie koncepcie), keďže jeho
   \item \textbf{Výstup 2:} Súbor odporúčaní pre aplikačné scenáre (TRL 3) – definovanie špecifických kontextov (napr. smart poľnohospodárstvo, priemyselná automatizácia), kde HaLow poskytuje preukázateľné výhody.
 \end{enumerate} \\
 \hline
+\end{tabularx}
+\end{table}
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{|l|l|X|}
+\hline
 04 & Využitie výsledkov riešenia v praxi (žiadateľ) & 
 \textbf{Áno.} Výsledky analýzy budú využité žiadateľom (STU FIIT) pre ďalší nadväzujúci výskum a ako podklad pre výučbu v predmetoch zameraných na IoT a bezdrôtové siete. \\
 \hline
@@ -131,5 +144,44 @@ Projekt dosiahne \textbf{TRL 3} (Analytické potvrdenie koncepcie), keďže jeho
 \hline
 \end{tabularx}
 \end{table}
+
+\subsection{\bf Formulár VV-C} %TOBIAS A ADAM
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{|l|l|X|}
+\hline
+01 & AAAA \\
+\hline
+\end{tabularx}
+\end{table}
+
+
+\subsection{\bf Formulár VV-D} %TOBIAS
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{|l|l|X|}
+\hline
+01 & AAAA \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{\bf Formulár VV-E} %ADAM
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{|l|l|X|}
+\hline
+01 & AAAA \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{\bf Formulár VV-F}
+\begin{table}[H]
+\begin{tabularx}{\linewidth}{|l|l|X|}
+\hline
+01 & AAAA \\
+\hline
+\end{tabularx}
+\end{table}
+
+
 
 \end{document}
