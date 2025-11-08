@@ -151,7 +151,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
 \noindent
 \textbf{LoRaWAN} je jeden z najrozšírenejších implementovaných LPWAN protokolov. Pracuje na modulácii \textit{chirp spread spectrum (CSS)} v nelicencovaných frekvenčných pásmach, kde LoRaWAN zariadenia komunikujú priamo s bránami, ktoré posielajú dáta na centrálne servery. Zabezpečený šifrovaním \textbf{AES-128}, tento populárny protokol poskytuje dátové rýchlosti od $0.3$ kbps do $27$ kbps. Prenosové dosahy sa typicky pohybujú do 15 km vo vidieckych oblastiach a približne $1-2$ km v mestskom prostredí. V závislosti od scenárov použitia môžu zariadenia LoRaWAN fungovať roky na jednu batériu.
 
-\begin{itemize}[label=$\bullet$]
+\begin{itemize}[$\bullet$]
     \item Typ: Nelicencovaný, založený na CSS modulácii (\textit{Chirp Spread Spectrum})
     \item Dosah: 2 km (mesto) – 15 km (vidiek); Rýchlosť: $0.3-27$ kbps
     \item \textbf{Funkcia:} Obojsmerná výmena dát (\textit{uplink/downlink}) a možnosť súkromných LoRa sietí bez operátorov.
@@ -162,7 +162,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
 \noindent
 \textbf{Sigfox} je úzkopásmová, necelulárna technológia optimalizovaná pre masový IoT s nízkymi dátovými rýchlosťami. Pracujúc v rádiových pásmach ISM, Sigfox ponúka široký prenosový dosah a nízke prevádzkové náklady. Zariadenia vysielajú správy viacerým základňovým staniciam (v priemere tri stanice prijmú každý prenos). Zameraný na aplikácie s nízkou šírkou pásma, Sigfox zaisťuje dlhú životnosť batérie a minimálne náklady na zariadenie vďaka jednoduchým hardvérovým komponentom a nízkoenergetickým polovodičom.
 
-\begin{itemize}[label=$\bullet$]
+\begin{itemize}[$\bullet$]
     \item Typ: Nelicencované ISM, Ultra-úzke pásmo (Ultra-Narrow Band)
     \item Dosah: do 40 km; Paket: 12 bajtov \textit{uplink}, 8 bajtov \textit{downlink}
     \item \textbf{Nevýhody:} Jednosmerný alebo obmedzený obojsmerný kanál, latencia v sekundách.
@@ -173,7 +173,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
 \noindent
 \textbf{NB-IoT} je celulárny LPWAN protokol optimalizovaný pre IoT aplikácie s nízkou šírkou pásma v hustých mestských prostrediach. Pracuje so šírkou kanála $180$ kHz, poskytuje dátové rýchlosti do $30$ Kbps (downlink) a $60$ Kbps (uplink), pričom sa vyznačuje optimálnou penetráciou v interiéroch, minimálnou interferenciou a dlhou životnosťou batérie.
 
-\begin{itemize}[label=$\bullet$]
+\begin{itemize}[$\bullet$]
     \item Typ: Celulárny (Licencovaný); Šírka kanála: 180 kHz
     \item Aplikácia: Inteligentné budovy, zámky, pouličné osvetlenie, mestské senzory.
     \item \textbf{Výhoda:} Pracuje na existujúcich LTE sieťach so zaručenou QoS (Quality of Service).
@@ -184,7 +184,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
 \noindent
 \textbf{LTE-M/CAT-M1} je celulárny LPWAN protokol, ktorý pracuje na existujúcej LTE infraštruktúre s dátovými rýchlosťami až do 1 Mbps. LTE-M umožňuje komunikáciu v reálnom čase s nízkou latenciou, zaisťujúc spoľahlivú konektivitu pre mobilné zariadenia a nositeľnú elektroniku. Hoci LTE-M spotrebúva viac energie ako NB-IoT, ponúka vyvážený kompromis medzi výkonom a efektivitou pre časté prenosy dát. Ako sa rozširujú siete $5$G, LTE-M bude naďalej fungovať popri NB-IoT, profitujúc zo zlepšenej škálovateľnosti a pokrytia.
 
-\begin{itemize}[label=$\bullet$]
+\begin{itemize}[$\bullet$]
     \item Typ: Celulárny (LTE); Rýchlosť: až 1 Mbps; Latencia: $< 60$ ms
     \item \textbf{Pozícia:} Rovnováha medzi rýchlosťou a úsporou energie. Podporovaná mobilita.
 \end{itemize}
@@ -194,7 +194,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
 \noindent
 \textbf{Weightless} je otvorený štandard LPWAN navrhnutý pre IoT. Pracuje primárne v nelicencovaných sub-$1$ GHz frekvenciách a pristupuje k licencovanému spektru cez Weightless-P. Vyvinutý v partnerstve s ETSI a spravovaný neziskovou skupinou Weightless SIG, tento protokol ponúka flexibilné možnosti nasadenia a umožňuje rôznorodé prípady použitia vďaka svojmu otvorenému štandardu.
 
-\begin{itemize}[label=$\bullet$]
+\begin{itemize}[$\bullet$]
     \item Typ: Otvorený štandard (\textit{open standard IoT LPWAN}), sub-1 GHz
     \item \textbf{Výhoda:} Transparentná štruktúra, prístup k štandardu, nekomerčné konzorcium.
 \end{itemize}
@@ -204,7 +204,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
 \noindent
 \textbf{Ingenu (RPMA – Random Phase Multiple Access)} je proprietárna LPWAN technológia, ktorá pracuje v licencovanom spektre. Poskytuje konektivitu na veľké vzdialenosti s vysokou priepustnosťou, ponúkajúc robustný výkon siete, odolnosť voči rušeniu a bezpečnostné funkcie.
 
-\begin{itemize}[label=$\bullet$]
+\begin{itemize}[$\bullet$]
     \item Typ: Licencované spektrum, proprietárna technológia
     \item \textbf{Oblasť:} Priemysel, kritická infraštruktúra, energetika.
 \end{itemize}
