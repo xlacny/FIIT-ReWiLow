@@ -1,5 +1,3 @@
-%%% TOTO JE HLAVNÝ SÚBOR, CLANOK.TEX, SEM UPRAVUJTE
-
 % !TEX TS-program = pdflatex
 % !TEX encoding = UTF-8 Unicode
 
@@ -10,12 +8,12 @@
 
 %LANGUAGE
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}   % UTF-8
-\usepackage[slovak]{babel}    % pre slovenský jazyk
+% \usepackage[utf8]{inputenc} % --- ODSTRÁNENÉ (DUPLIKÁT)
+\usepackage[slovak]{babel} % pre slovenský jazyk
+\usepackage{lmodern}         % --- PRIDANÉ: Pre lepšie fonty s T1
 
 %DIMENZIE
-\usepackage{geometry}
-\geometry{a4paper}
+
 \usepackage{geometry}
 \geometry{
     a4paper,
@@ -27,13 +25,19 @@
 }
 
 \usepackage{graphicx} 
-\usepackage[IL2]{fontenc}
+% \usepackage[IL2]{fontenc} % --- ODSTRÁNENÉ (Konflikt s T1)
+
 %PACKAGES
 \usepackage{booktabs} 
 \usepackage{array} 
 \usepackage{paralist} 
 \usepackage{verbatim} 
 \usepackage{subfig} 
+\usepackage{longtable} % --- PRIDANÉ: Opravuje chybu 'longtable undefined'
+\usepackage{csquotes}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[numbers]{natbib}
 
 % HEADERS & FOOTERS
 \usepackage{fancyhdr}
@@ -50,25 +54,21 @@
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape}
 
-\title{ \bf Výskum WiFi HaLow Technológie}
+\title{ \textbf{Výskum WiFi HaLow Technológie}}
 \author{Adam Kšenzulák\and Arsenii Leno\and Oleh Kysil\and Tobias Lačný}
 \date{}
 
 \begin{document}
 \maketitle
-\paragraph {\bf Akronym: \tt ReWiLow}
-\section*{\bf Charakteristika projektu}
+\paragraph {\textbf{Akronym:} \texttt{ReWiLow}} % Upravené \bf a \tt
+\section*{\textbf{Charakteristika projektu}} % Upravené \bf
 
 Naša skupina skúma štandard IEEE 802.11ah pre LPWAN (Low Power Wide Area Network – Nízkoenergetická rozsiahla sieť), bežne známy ako Wi-fi HaLow, so zameraním  na jeho architektonický dizajn, výkonové charakteristiky a vhodnosť pre komunikáciu v rámci Internetu vecí (IoT), komuníkaciu medzi strojmi (M2M) aj na trhu. Skúmané sú aj jedinečné technické vlastnosti HaLow, ako pre prevádzka pod 1GHz v nelicencovaných rádiových (ISM) pásiem, rozsšírený dosah, nízka spotreba energie, a aj vysoká hustota zariadení. Hodnotená je aj jeho použiteľnosť v reálnych scenároch, vrátane inteligentného poľnohospodárstva, priemyselnej automatizácie, monitorovania životného prostredia a inteligentných miest.
 V rámci projektu sa bude zameriavať aj na komparatívnu analýzu medzi Wi-Fi HaLow a inými LPWAN technológiami, príkladom sú LoRaWAN, Sigfox, alebo aj NB IoT najmä v ich parametroch, ako sú dosah, rýchlosť prenosu dát, latencia, energetická účinnosť a škálovateľnosť siete. Našim cieľom bude určiť konkrétne kontexty, v ktorých Wi-Fi HaLow ponúka výhody alebo obmedzenia v porovnaní s konkurečnými riešeniami LPWAN. Výsledky majú slúžiť ako podklad pre budúci rozvoj infraštruktúry IoT a stratégií konektivity na Slovensku
 
-\section*{\bf Všeobecne údaje}
+\section*{\textbf{Všeobecné údaje}} % Upravené \bf
 
-% Druhý riadok (Nízkoprúdové rozsiahle siete (LPWAN)) bude upravený ako
-% podnadpis/hlavný predmet v tučnom, väčšom písme (napr. \subsection*),
-% čím získa lepšiu vizuálnu hierarchiu.
-
-\subsection*{\bf Nízkoprúdové Rozsiahle Siete (LPWAN)}
+\subsection*{\textbf{Nízkoprúdové Rozsiahle Siete (LPWAN)}} % Upravené \bf
 
 \noindent
 \textbf{Nízkoprúdová rozsiahla sieť} (Low-Power, Wide-Area Network – \textbf{LPWAN} alebo \textbf{LPWA}) predstavuje špecifický typ bezdrôtovej telekomunikačnej rozsiahlej siete. Jej primárnym účelom je umožniť \textbf{komunikáciu na dlhé vzdialenosti} pri \textbf{nízkej bitovej rýchlosti}. Táto architektúra je navrhnutá predovšetkým na pripojenie zariadení \textbf{internetu vecí (IoT)}, ako sú senzory, ktoré sú typicky napájané z batérie.
@@ -83,7 +83,7 @@ Charakteristické vlastnosti, ako sú \textbf{nízka spotreba energie}, obmedzen
 \noindent
 LPWAN technológie umožňujú vytvorenie \textbf{privátnych bezdrôtových senzorových sietí}. Zároveň môžu byť ponúkané ako \textbf{infraštruktúrna služba} tretej strany. Táto možnosť eliminuje pre majiteľov senzorov nutnosť investovať do vlastnej \textbf{gateway} (\textbf{bránovej}) technológie, čím sa zjednodušuje a urýchľuje nasadenie zariadení v teréne.
 
-\subsection*{\bf Princíp fungovania LPWAN}
+\subsection*{\textbf{Princíp fungovania LPWAN}} % Upravené \bf
 
 \noindent
 Základom princípu prenosu dát technológiou LPWAN na fyzickej vrstve PHY je \textbf{vlastnosť rádiových systémov} – \textit{zvýšenie energie,} a tým aj dosahu komunikácie pri \textit{znížení prenosovej rýchlosti}. Čím \textbf{nižšia je prenosová bitová rýchlosť}, tým viac energie sa vkladá do každého bitu, a tým \textbf{ľahšie je ho rozlíšiť} na pozadí šumu v prijímacej časti systému. Nízka prenosová rýchlosť dát teda umožňuje dosiahnuť väčší dosah ich príjmu.
@@ -91,24 +91,275 @@ Základom princípu prenosu dát technológiou LPWAN na fyzickej vrstve PHY je \
 \vspace{0.5\baselineskip}
 
 \noindent
+Prístup používaný na konštrukciu LPWAN-siete je \textbf{podobný} princípu fungovania \textbf{mobilných komunikačných sietí}. LPWAN-sieť využíva topológiu \textit{„hviezda“}, kde každé zariadenie komunikuje priamo so základňovou stanicou. Mestské alebo regionálne siete sa konštruujú s použitím konfigurácie „hviezda z hviezd“.
 
-Prístup používaný na konštrukciu LPWAN-siete je \textbf{podobný} princípu fungovania \textbf{mobilných komunikačných sietí}. LPWAN-sieť využíva topológiu \textit{„hviezda“}, kde každé zariadenie komunikuje priamo so základňovou stanicou. Mestské alebo regionálne siete sa konštrujujú s použitím konfigurácie „hviezda z hviezd“.
-
-\begin{figure}
+% --- OBRÁZOK NAHRADENÝ ZAPISOVAČOM ---
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\linewidth]{LPWAN_pc1.png}
+    \framebox{\parbox{0.7\textwidth}{\centering
+        \vspace{3cm}
+        \textbf{Miesto pre obrázok} \\
+        \small\textit{LPWAN sieť (obrázok LPWAN\_pc1.png)}
+        \vspace{3cm}
+    }}
     \caption{LPWAN sieť}
     \label{fig:pc1}
 \end{figure}
+% --- KONIEC ZAPISOVAČA ---
 
-% 3. Pouzitie vo svete
-\section*{\bf Použitie LPWAN }
+%Tobias
+\subsection{\textbf{Wi-fi HaLow - Konkrétne informácie}}
+V informatickom modernom svete sa čoraz viac a viac začínajú využívať produkty IoT (Internetu vecí), Množstvo produktov, od bezpečnostných kamier, smart chladiace prístrojov, smart mikrovlnné trúb až po jednoduchú komunikácia na rádiových zariadeniach  \cite{wifi_halow2021}.
+
+
+% -------- porovnanie so súčasnými technológiami @Άρςεν_Κόζακ ⚜ (štandardizované ako 2.4) ---
+
+\subsection{Porovnanie LPWAN s inými modernými technológiami}
+\label{sec:lpwan_vs_others}
+
+\subsubsection*{Filozofia LPWAN}
+\begin{itemize}
+    \item Nie rýchlosť, ale úspora energie + pokrytie + životnosť.
+\end{itemize}
 
 \noindent
-\subsection*{\bf Súčasné použitie technológie LPWAN vo svete}
+Väčšina LPWAN protokolov nedokáže podporovať aplikácie s vysokou šírkou pásma, ako je streamovanie videa alebo rozsiahle, rýchle prenosy dát. \textbf{LTE-M} napríklad ponúka vyššie rýchlosti dát, podporujúc \textit{Voice over LTE (VoLTE)} pre podnikové a priemyselné nasadenia.
 
-\subsection*{\bf Perspektívy rozvoja a využitia LPWAN v budúcnosti}
+\noindent
+Hoci LPWAN rádiá umožňujú spoľahlivú obojsmernú komunikáciu, niektoré implementácie sú náchylné na latenciu a oneskorenia prenosu, čo obmedzuje ich efektivitu pre riadiace aplikácie v reálnom čase, ktoré vyžadujú rýchle, veľké prenosy dát a nízku alebo ultra-nízku latenciu. Avšak, LPWAN exceluje v rozsiahlych nasadeniach s nízkou šírkou pásma, ktoré vyžadujú komunikáciu na veľké vzdialenosti a minimálnu spotrebu energie (napr. siete distribuovaných zariadení, ktoré prerušovane posielajú malé dátové pakety).
 
-\end{document}
+\noindent
+Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú efektívne pre nepretržitú, rozsiahlu konektivitu M2M (Machine-to-Machine) a IIoT (Industrial IoT). Tieto protokoly sú však široko používané v mnohých spotrebiteľských, podnikových a priemyselných aplikáciách. Napríklad, \textbf{Wi-Fi} je preferovanou voľbou pre kamery s vysokou priepustnosťou a video zvončeky, pričom štandardy Wi-Fi 6, 6E a 7 implementujú funkcie ako \textit{Target Wake Time (TWT)} a \textit{Power Save Mode (PSM)} na optimalizáciu spotreby energie.
+
+\noindent
+\textbf{Bluetooth LE} je populárny pre fitness trackery, medicínske zariadenia a pripojené systémy osvetlenia. Zatiaľ čo problémy s interferenciou a fragmentované profily spomalili adopciu \textbf{ZigBee}, tento protokol je stále životaschopný pre domácu automatizáciu, inteligentné osvetlenie a environmentálne senzory.
+
+\subsubsection{Detailný Prehľad Kľúčových LPWAN Protokolov}
+\label{sec:detailed_lpwan_review}
+\textit{Autor: Arsen Kozak}
+
+\vspace{0.5\baselineskip}
+\subsubsection*{1. LoRaWAN}
+\noindent
+\textbf{LoRaWAN} je jeden z najrozšírenejších implementovaných LPWAN protokolov. Pracuje na modulácii \textit{chirp spread spectrum (CSS)} v nelicencovaných frekvenčných pásmach, kde LoRaWAN zariadenia komunikujú priamo s bránami, ktoré posielajú dáta na centrálne servery. Zabezpečený šifrovaním \textbf{AES-128}, tento populárny protokol poskytuje dátové rýchlosti od $0.3$ kbps do $27$ kbps. Prenosové dosahy sa typicky pohybujú do 15 km vo vidieckych oblastiach a približne $1-2$ km v mestskom prostredí. V závislosti od scenárov použitia môžu zariadenia LoRaWAN fungovať roky na jednu batériu.
+
+\begin{itemize}[label=$\bullet$]
+    \item Typ: Nelicencovaný, založený na CSS modulácii (\textit{Chirp Spread Spectrum})
+    \item Dosah: 2 km (mesto) – 15 km (vidiek); Rýchlosť: $0.3-27$ kbps
+    \item \textbf{Funkcia:} Obojsmerná výmena dát (\textit{uplink/downlink}) a možnosť súkromných LoRa sietí bez operátorov.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\subsubsection*{2. Sigfox}
+\noindent
+\textbf{Sigfox} je úzkopásmová, necelulárna technológia optimalizovaná pre masový IoT s nízkymi dátovými rýchlosťami. Pracujúc v rádiových pásmach ISM, Sigfox ponúka široký prenosový dosah a nízke prevádzkové náklady. Zariadenia vysielajú správy viacerým základňovým staniciam (v priemere tri stanice prijmú každý prenos). Zameraný na aplikácie s nízkou šírkou pásma, Sigfox zaisťuje dlhú životnosť batérie a minimálne náklady na zariadenie vďaka jednoduchým hardvérovým komponentom a nízkoenergetickým polovodičom.
+
+\begin{itemize}[label=$\bullet$]
+    \item Typ: Nelicencované ISM, Ultra-úzke pásmo (Ultra-Narrow Band)
+    \item Dosah: do 40 km; Paket: 12 bajtov \textit{uplink}, 8 bajtov \textit{downlink}
+    \item \textbf{Nevýhody:} Jednosmerný alebo obmedzený obojsmerný kanál, latencia v sekundách.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\subsubsection*{3. NB-IoT (\textit{Narrowband IoT})}
+\noindent
+\textbf{NB-IoT} je celulárny LPWAN protokol optimalizovaný pre IoT aplikácie s nízkou šírkou pásma v hustých mestských prostrediach. Pracuje so šírkou kanála $180$ kHz, poskytuje dátové rýchlosti do $30$ Kbps (downlink) a $60$ Kbps (uplink), pričom sa vyznačuje optimálnou penetráciou v interiéroch, minimálnou interferenciou a dlhou životnosťou batérie.
+
+\begin{itemize}[label=$\bullet$]
+    \item Typ: Celulárny (Licencovaný); Šírka kanála: 180 kHz
+    \item Aplikácia: Inteligentné budovy, zámky, pouličné osvetlenie, mestské senzory.
+    \item \textbf{Výhoda:} Pracuje na existujúcich LTE sieťach so zaručenou QoS (Quality of Service).
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\subsubsection*{4. LTE-M / Cat-M1}
+\noindent
+\textbf{LTE-M/CAT-M1} je celulárny LPWAN protokol, ktorý pracuje na existujúcej LTE infraštruktúre s dátovými rýchlosťami až do 1 Mbps. LTE-M umožňuje komunikáciu v reálnom čase s nízkou latenciou, zaisťujúc spoľahlivú konektivitu pre mobilné zariadenia a nositeľnú elektroniku. Hoci LTE-M spotrebúva viac energie ako NB-IoT, ponúka vyvážený kompromis medzi výkonom a efektivitou pre časté prenosy dát. Ako sa rozširujú siete $5$G, LTE-M bude naďalej fungovať popri NB-IoT, profitujúc zo zlepšenej škálovateľnosti a pokrytia.
+
+\begin{itemize}[label=$\bullet$]
+    \item Typ: Celulárny (LTE); Rýchlosť: až 1 Mbps; Latencia: $< 60$ ms
+    \item \textbf{Pozícia:} Rovnováha medzi rýchlosťou a úsporou energie. Podporovaná mobilita.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\subsubsection*{5. Weightless (SIG)}
+\noindent
+\textbf{Weightless} je otvorený štandard LPWAN navrhnutý pre IoT. Pracuje primárne v nelicencovaných sub-$1$ GHz frekvenciách a pristupuje k licencovanému spektru cez Weightless-P. Vyvinutý v partnerstve s ETSI a spravovaný neziskovou skupinou Weightless SIG, tento protokol ponúka flexibilné možnosti nasadenia a umožňuje rôznorodé prípady použitia vďaka svojmu otvorenému štandardu.
+
+\begin{itemize}[label=$\bullet$]
+    \item Typ: Otvorený štandard (\textit{open standard IoT LPWAN}), sub-1 GHz
+    \item \textbf{Výhoda:} Transparentná štruktúra, prístup k štandardu, nekomerčné konzorcium.
+\end{itemize}
+
+\vspace{0.5\baselineskip}
+\subsubsection*{6. Ingenu (RPMA – \textit{Random Phase Multiple Access})}
+\noindent
+\textbf{Ingenu (RPMA – Random Phase Multiple Access)} je proprietárna LPWAN technológia, ktorá pracuje v licencovanom spektre. Poskytuje konektivitu na veľké vzdialenosti s vysokou priepustnosťou, ponúkajúc robustný výkon siete, odolnosť voči rušeniu a bezpečnostné funkcie.
+
+\begin{itemize}[label=$\bullet$]
+    \item Typ: Licencované spektrum, proprietárna technológia
+    \item \textbf{Oblasť:} Priemysel, kritická infraštruktúra, energetika.
+\end{itemize}
+
+\subsubsection{Prehľad Kľúčových Funkčných Rozdielov}
+\label{sec:comparative_matrix_overview} % Zmenený label, aby sa predišlo duplicite
+
+\noindent
+Ako je vidieť z porovnávacej matice, LPWAN technológie sa delia na dve hlavné skupiny: \textbf{Celulárne (NB-IoT, LTE-M)} a \textbf{Necelulárne (LoRaWAN, Sigfox)}. Kľúčové zistenia:
+\begin{itemize}
+    \item \textbf{Rýchlosť a Latencia:} \textbf{LTE-M} je jasným lídrom, ponúka rýchlosti až $1$ Mbps a nízku latenciu ($< 60$ ms), čo ho robí ideálnym pre mobilitu a aplikácie v reálnom čase. NB-IoT ponúka miernu rýchlosť a vyššiu latenciu.
+    \item \textbf{Dosah a Paket:} \textbf{Sigfox} a \textbf{LoRaWAN} dominujú v dosahu (až $40$ km a $20$ km) a sú vhodnejšie pre veľké oblasti, ale obmedzujú veľkosť paketu a majú vyššiu latenciu. Sigfox je najviac obmedzený v objeme dát ($12$ B).
+    \item \textbf{Spektrum a Nasadenie:} Celulárne technológie pracujú v \textbf{licencovanom} spektre, čo garantuje QoS, ale vyžaduje operátora. LoRaWAN a Sigfox využívajú \textbf{nelicencované} spektrum, čo umožňuje vytváranie \textbf{súkromných sietí} (najmä LoRaWAN), čo je významná výhoda pre autonómne podniky.
+    \item \textbf{Spotreba Energie:} Všetky LPWAN technológie poskytujú dlhú životnosť batérie (roky), čo potvrdzuje ich spoločný cieľ.
+\end{itemize}
+
+\begin{longtable}{l c c c c}
+    \caption{Porovnávacia Matica Parametrov LPWAN Technológií}
+    \label{tab:matrix_comparison} \\
+    \toprule
+    \textbf{Parameter} & \textbf{NB-IoT} & \textbf{LTE-M} & \textbf{LoRaWAN} & \textbf{Sigfox} \\
+    \midrule
+    \endfirsthead
+    \caption{Pokračovanie: Porovnávacia Matica Parametrov LPWAN Technológií} \\
+    \toprule
+    \textbf{Parameter} & \textbf{NB-IoT} & \textbf{LTE-M} & \textbf{LoRaWAN} & \textbf{Sigfox} \\
+    \midrule
+    \endhead
+    \textbf{Spektrum} & Licencované & Licencované & Nelicencované & Nelicencované \\
+    \textbf{Dosah (mesto/vidiek)} & $\approx 1 / 10$ km & $\approx 1 / 10$ km & $\approx 5 / 20$ km & $\approx 10 / 40$ km \\
+    \textbf{Rýchlosť} & $26-66$ kbps & až 1 Mbps & $0.3-5.5$ kbps & $0.1$ kbps \\
+    \textbf{Životnosť batérie} & Roky & Roky & Roky & Roky \\
+    \textbf{Latencia} & $1.2-10$ s & $< 60$ ms & Sekundy & Sekundy \\
+    \textbf{Mobilita} & Obmedzená & Áno & Áno & Áno \\
+    \textbf{Súkromné siete} & Nie & Nie & Áno & Nie \\
+    \textbf{Max. Paket} & 1280 B & 1280 B & $11-242$ B & 12 B (UL) \\
+    \textbf{Výkon} & $20-120$ mW & $60-200$ mW & $25-100$ mW & $20-100$ mW \\
+    \bottomrule
+\end{longtable}
+
+\subsubsection{Dodatočne: Rozdiel medzi Wi-Fi HaLow a LPWAN}
+\label{sec:halow_modernity}
+
+\noindent
+Tabuľka nižšie ukazuje, že \textbf{Wi-Fi HaLow} je výhodne pozicovaný ako jedinečný most v ekosystéme IoT. Tým, že pracuje v pásme sub-$1$ GHz a ponúka vysokú rýchlosť ($78$ Mbps), poskytuje výrazne \textbf{lepšiu priepustnosť} pri nízkej spotrebe energie ako tradičné LPWAN protokoly (NB-IoT, LoRaWAN). Jeho schopnosť podporovať viac ako $8000$ zariadení na jeden prístupový bod poskytuje bezprecedentnú škálovateľnosť pre priemyselné a inteligentné mestá, čím vypĺňa medzeru medzi vysokovýkonným Wi-Fi a nízkou priepustnosťou klasického LPWAN.
+\vspace{0.5\baselineskip}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Kľúčové Parametre Wi-Fi HaLow vs. Ostatné LPWAN}
+    \label{tab:halow_summary}
+    \begin{tabular}{l l l}
+        \toprule
+        \textbf{Kritérium} & \textbf{Wi-Fi HaLow} & \textbf{Porovnanie s LPWAN} \\
+        \midrule
+        Frekvenčný Rozsah & $< 1$ GHz ($900$ MHz) & Lepšia penetrácia cez steny a vegetáciu \\
+        Prevádzkový Dosah & do $1$ km & Menej ako LoRa/Sigfox, ale viac ako štandardné Wi-Fi \\
+        Rýchlosť & až $78$ Mbps (krátke vzdial.) & Výrazne vyššia ako LPWAN \\
+        Pripojenia & $> 8000$ zariadení & Škálovateľnosť ako NB-IoT \\
+        Latencia & niekoľko ms & Lepšia ako väčšina LPWAN \\
+        Spotreba Energie & oveľa menej ako štandardné Wi-Fi & Bližšie k LPWAN \\
+        Licencovanie & Nelicencované, otvorený štandard & Nevyžaduje operátorov \\
+        Pozícia & ``Most'' medzi Wi-Fi a LPWAN & Optimálna rovnováha rýchlosť $\leftrightarrow$ energia \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% --- ZAČIATOK KAPITOLY 3 ---
+% Použitie vo svete @Άρςεν_Κόζακ ⚜ @ADAMEČKO
+% kde je používané kde sa dá použiť
+% ------------------------------------------------------
+
+\section{Aplikácie LPWAN Technológií a Rola Wi-Fi HaLow}
+\label{sec:applications_and_halow}
+
+\subsection{Súčasné použitie technológie LPWAN vo svete}
+\label{sec:current_usage_slovak}
+\textit{Autori: Arsen Kozak, Adam Kšenzulák}
+
+\noindent
+Wi-Fi HaLow sa už posunul mimo laboratórií a aktívne sa testuje v reálnych projektoch na viacerých kontinentoch. Jeho aplikácia je najviac viditeľná v krajinách, ktoré aktívne rozvíjajú IoT infraštruktúru, inteligentné mestá a poľnohospodárstvo založené na autonómnych systémoch.
+
+\vspace{0.5\baselineskip}
+\noindent
+V \textbf{Číne} je Wi-Fi HaLow aktívne propagovaný v rámci programov ''Smart Agriculture'' a "New Industrial Internet". Konkrétne v provinciách Guangdong a Jiangsu sa implementujú systémy na monitorovanie stavu pôdy a klímy pomocou Wi-Fi HaLow senzorov. Spoločnosti ako \textbf{Huawei} a \textbf{Hikvision} ho integrujú do video monitorovacích zariadení pre veľké oblasti.
+
+\noindent
+V \textbf{Austrálii} technológia získala trakciu v agro-priemyselnom komplexe. Spoločnosti ako \textbf{Morse Micro} sa zameriavajú na nasadzovanie sietí na veľkých farmách pre monitorovanie dobytka, kontrolu hladiny vody v nádržiach a požiarnu bezpečnosť, kde je pokrytie Wi-Fi, BLE a ZigBee nedostatočné.
+
+\noindent
+V \textbf{Európe} (Nemecko, Slovensko, Holandsko) sa HaLow primárne používa v projektoch inteligentných miest na pripojenie LED pouličných svetiel a environmentálnych senzorov, poskytujúc vysokú rýchlosť pre prenos diagnostických dát a aktualizácií firmvéru na veľké vzdialenosti.
+
+\noindent
+V \textbf{USA} sa Wi-Fi HaLow používa pre automatizáciu inteligentných domácností, najmä na rozšírenie dosahu IoT zariadení mimo domu na pokrytie veľkých pozemkov. Taktiež sa aplikuje v priemyselných parkoch na sledovanie majetku (asset tracking) a monitorovanie komplexných výrobných procesov, kde je potrebná vysoká spoľahlivosť a nízka latencia.
+
+\subsubsection*{Kľúčové Trhy a Pozícia HaLow}
+\begin{itemize}
+    \item \textbf{Čína:} Inteligentné poľnohospodárstvo, priemyselné moduly (Huawei, Hikvision).
+    \item \textbf{Austrália:} Farmy, požiarna bezpečnosť, monitorovanie nádrží (Morse Micro).
+    \item \textbf{Európa:} Osvetlenie v Smart City, environmentálne senzory (Nemecko, Slovensko, Holandsko).
+\end{itemize}
+
+\noindent
+\textbf{Myšlienka:} Nie nahradiť LPWAN, ale doplniť ho: vytvoriť univerzálny "most" pre systémy, ktoré vyžadujú obojsmernú komunikáciu, vyššiu rýchlosť a nižšiu spotrebu energie ako štandardné Wi-Fi.
+
+\subsection{Trhové Trendy a Regionálna Vhodnosť LPWAN}
+\label{sec:regional_trends}
+\begin{table}[htbp]
+    \centering
+    \caption{Trhové Trendy a Regionálna Vhodnosť LPWAN}
+    \label{tab:regional_trends}
+    \begin{tabular}{l l c l}
+        \toprule
+        \textbf{Technológia} & \textbf{Hlavné Regióny} & \textbf{Podiel na Trhu} & \textbf{Trendy} \\
+        \midrule
+        NB-IoT & Čína (84\%), EÚ, Blízky Východ & $\sim 23\%$ (2027) & Rozvoj smart-city, urban-IoT \\
+        LTE-M & USA, EÚ, Austrália & $\sim 32\%$ (2023) & Rast vďaka LTE infraštruktúre \\
+        LoRaWAN & Sev. Amerika, EÚ, APAC & $\sim 40\%$ (2023), $\to 35\%$ (2027) & Líder mimo Číny, otvorený ekosystém \\
+        Sigfox & EÚ (Francúzsko, Španielsko), Japonsko, Brazília & Menší, ale stabilný & Medzera pre nízkonákladové senzory \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Hlavné Priemyselné Aplikácie}
+\label{sec:industry_applications}
+\begin{table}[htbp]
+    \centering
+    \caption{Hlavné Priemyselné Aplikácie LPWAN Technológií}
+    \label{tab:applications}
+    \begin{tabular}{l l l}
+        \toprule
+        \textbf{Odvetvie} & \textbf{LPWAN Technológie} & \textbf{Príklady} \\
+        \midrule
+        Smart City / Mestský Život & LoRaWAN, NB-IoT, Sigfox & Parkovanie, osvetlenie, monitorovanie ovzdušia, odpad \\
+        Maloobchod / Logistika & NB-IoT, LTE-M, LoRaWAN & Inteligentné police, RFID monitorovanie, správa zásob \\
+        Priemyselný IoT / Automatizácia & LTE-M, NB-IoT, LoRaWAN & Výrobné linky, kontrola zariadení \\
+        Inteligentné Poľnohospodárstvo / Životné Prostredie & LoRaWAN, Sigfox, NB-IoT & Vlhkosť pôdy, dobytok, kontrola požiarov \\
+        eHealth / Zdravotníctvo & LTE-M, NB-IoT, LoRaWAN & Nositeľné zariadenia, monitorovanie pacientov, telemedicína \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\vspace{0.5\baselineskip}
+\noindent
+Analýza priemyselných aplikácií jasne ukazuje, že \textbf{žiadna jednotlivá LPWAN technológia nie je univerzálna}. Každý protokol obsadzuje svoju vlastnú medzeru na trhu:
+
+\begin{itemize}
+    \item \textbf{LoRaWAN a Sigfox} sú nenahraditeľné tam, kde sú kritické \textbf{maximálny dosah} a \textbf{minimálna spotreba energie} (poľnohospodárstvo, monitorovanie životného prostredia), aj keď za cenu nízkej rýchlosti a vysokej latencie.
+
+    \item \textbf{NB-IoT a LTE-M} dominujú v mestských a priemyselných prostrediach, kde sú potrebné \textbf{spoľahlivosť, zaručená kvalita služby (QoS)} a vyššia úroveň mobility (inteligentné mestá, logistika).
+
+    \item Nový hráč, \textbf{Wi-Fi HaLow}, sa pozicionuje ako \textbf{"Most"}, ponúkajúc výrazne vyššiu rýchlosť a nižšiu latenciu v porovnaní s ostatnými LPWAN, pričom si zachováva dobrú energetickú efektivitu a dosah potrebný pre podnikový a domáci IoT.
+\end{itemize}
+
+% návrhy toho, kde sa ešte dá použiť prínos do sveta
+% @ADAMEČKO
+% ------------------------------------------------------ %
+\subsubsection{Perspektívy rozvoja a využitia LPWAN v budúcnosti}
+\label{sec:perspektivy}
+\noindent
+%(Tu bude umiestnený text o perspektívach...)
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{literatura}
 
 \end{document}
