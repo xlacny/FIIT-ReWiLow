@@ -127,7 +127,7 @@ IEEE 802.11ah má oproti minulým štandardom rovnakého názvu možnosť vyhrad
 
 \subsubsection*{Filozofia LPWAN}
 \begin{itemize}
-    \item Nie rýchlosť, ale úspora energie + pokrytie + životnosť.
+    \item Nie rýchlosť, ale úspora energie + pokrytie + životnosť. \cite{iotanalytics2018_lpwan}
 \end{itemize}
 
 \noindent
@@ -141,6 +141,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
 
 \noindent
 \textbf{Bluetooth LE} je populárny pre fitness trackery, medicínske zariadenia a pripojené systémy osvetlenia. Zatiaľ čo problémy s interferenciou a fragmentované profily spomalili adopciu \textbf{ZigBee}, tento protokol je stále životaschopný pre domácu automatizáciu, inteligentné osvetlenie a environmentálne senzory.
+\cite{dfrobot2025_lpwan}
 
 \subsubsection{Detailný Prehľad Kľúčových LPWAN Protokolov}
 \label{sec:detailed_lpwan_review}
@@ -156,6 +157,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
     \item Dosah: 2 km (mesto) – 15 km (vidiek); Rýchlosť: $0.3-27$ kbps
     \item \textbf{Funkcia:} Obojsmerná výmena dát (\textit{uplink/downlink}) a možnosť súkromných LoRa sietí bez operátorov.
 \end{itemize}
+\cite{dfrobot2025_lpwan}
 
 \vspace{0.5\baselineskip}
 \subsubsection*{2. Sigfox}
@@ -167,7 +169,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
     \item Dosah: do 40 km; Paket: 12 bajtov \textit{uplink}, 8 bajtov \textit{downlink}
     \item \textbf{Nevýhody:} Jednosmerný alebo obmedzený obojsmerný kanál, latencia v sekundách.
 \end{itemize}
-
+\cite{dfrobot2025_lpwan}
 \vspace{0.5\baselineskip}
 \subsubsection*{3. NB-IoT (\textit{Narrowband IoT})}
 \noindent
@@ -178,7 +180,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
     \item Aplikácia: Inteligentné budovy, zámky, pouličné osvetlenie, mestské senzory.
     \item \textbf{Výhoda:} Pracuje na existujúcich LTE sieťach so zaručenou QoS (Quality of Service).
 \end{itemize}
-
+\cite{dfrobot2025_lpwan}
 \vspace{0.5\baselineskip}
 \subsubsection*{4. LTE-M / Cat-M1}
 \noindent
@@ -188,7 +190,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
     \item Typ: Celulárny (LTE); Rýchlosť: až 1 Mbps; Latencia: $< 60$ ms
     \item \textbf{Pozícia:} Rovnováha medzi rýchlosťou a úsporou energie. Podporovaná mobilita.
 \end{itemize}
-
+\cite{dfrobot2025_lpwan}
 \vspace{0.5\baselineskip}
 \subsubsection*{5. Weightless (SIG)}
 \noindent
@@ -198,7 +200,7 @@ Naopak, \textbf{Wi-Fi}, \textbf{Bluetooth LE} a \textbf{ZigBee} sa neškálujú 
     \item Typ: Otvorený štandard (\textit{open standard IoT LPWAN}), sub-1 GHz
     \item \textbf{Výhoda:} Transparentná štruktúra, prístup k štandardu, nekomerčné konzorcium.
 \end{itemize}
-
+\cite{dfrobot2025_lpwan}
 \vspace{0.5\baselineskip}
 \subsubsection*{6. Ingenu (RPMA – \textit{Random Phase Multiple Access})}
 \noindent
@@ -223,6 +225,7 @@ Ako je vidieť z porovnávacej matice, LPWAN technológie sa delia na dve hlavn�
 
 \begin{longtable}{l c c c c}
     \caption{Porovnávacia Matica Parametrov LPWAN Technológií}
+    \cite{5gtechworld2024_lpwan}
     \label{tab:matrix_comparison} \\
     \toprule
     \textbf{Parameter} & \textbf{NB-IoT} & \textbf{LTE-M} & \textbf{LoRaWAN} & \textbf{Sigfox} \\
@@ -247,11 +250,12 @@ Ako je vidieť z porovnávacej matice, LPWAN technológie sa delia na dve hlavn�
 
 \subsubsection{Dodatočne: Rozdiel medzi Wi-Fi HaLow a LPWAN}
 \label{sec:halow_modernity}
-
+\cite{dfrobot2025_lpwan}
 \noindent
 Tabuľka nižšie ukazuje, že \textbf{Wi-Fi HaLow} je výhodne pozicovaný ako jedinečný most v ekosystéme IoT. Tým, že pracuje v pásme sub-$1$ GHz a ponúka vysokú rýchlosť ($78$ Mbps), poskytuje výrazne \textbf{lepšiu priepustnosť} pri nízkej spotrebe energie ako tradičné LPWAN protokoly (NB-IoT, LoRaWAN). Jeho schopnosť podporovať viac ako $8000$ zariadení na jeden prístupový bod poskytuje bezprecedentnú škálovateľnosť pre priemyselné a inteligentné mestá, čím vypĺňa medzeru medzi vysokovýkonným Wi-Fi a nízkou priepustnosťou klasického LPWAN.
 \vspace{0.5\baselineskip}
 
+\cite{velosiot2023_lpwancases}
 \begin{table}[htbp]
     \centering
     \caption{Kľúčové Parametre Wi-Fi HaLow vs. Ostatné LPWAN}
@@ -271,7 +275,7 @@ Tabuľka nižšie ukazuje, že \textbf{Wi-Fi HaLow} je výhodne pozicovaný ako 
         \bottomrule
     \end{tabular}
 \end{table}
-
+\cite{dfrobot2025_lpwan}
 % --- ZAČIATOK KAPITOLY 3 ---
 % Použitie vo svete @Άρςεν_Κόζακ ⚜ @ADAMEČKO
 % kde je používané kde sa dá použiť
@@ -286,17 +290,17 @@ Tabuľka nižšie ukazuje, že \textbf{Wi-Fi HaLow} je výhodne pozicovaný ako 
 
 \noindent
 Wi-Fi HaLow sa už posunul mimo laboratórií a aktívne sa testuje v reálnych projektoch na viacerých kontinentoch. Jeho aplikácia je najviac viditeľná v krajinách, ktoré aktívne rozvíjajú IoT infraštruktúru, inteligentné mestá a poľnohospodárstvo založené na autonómnych systémoch.
-
+\cite{iotanalytics2018_lpwan}
 \vspace{0.5\baselineskip}
 \noindent
 V \textbf{Číne} je Wi-Fi HaLow aktívne propagovaný v rámci programov ''Smart Agriculture'' a "New Industrial Internet". Konkrétne v provinciách Guangdong a Jiangsu sa implementujú systémy na monitorovanie stavu pôdy a klímy pomocou Wi-Fi HaLow senzorov. Spoločnosti ako \textbf{Huawei} a \textbf{Hikvision} ho integrujú do video monitorovacích zariadení pre veľké oblasti.
-
+\cite{iotanalytics2018_lpwan}
 \noindent
 V \textbf{Austrálii} technológia získala trakciu v agro-priemyselnom komplexe. Spoločnosti ako \textbf{Morse Micro} sa zameriavajú na nasadzovanie sietí na veľkých farmách pre monitorovanie dobytka, kontrolu hladiny vody v nádržiach a požiarnu bezpečnosť, kde je pokrytie Wi-Fi, BLE a ZigBee nedostatočné.
-
+\cite{iotanalytics2018_lpwan}
 \noindent
 V \textbf{Európe} (Nemecko, Slovensko, Holandsko) sa HaLow primárne používa v projektoch inteligentných miest na pripojenie LED pouličných svetiel a environmentálnych senzorov, poskytujúc vysokú rýchlosť pre prenos diagnostických dát a aktualizácií firmvéru na veľké vzdialenosti.
-
+\cite{iotanalytics2018_lpwan}
 \noindent
 V \textbf{USA} sa Wi-Fi HaLow používa pre automatizáciu inteligentných domácností, najmä na rozšírenie dosahu IoT zariadení mimo domu na pokrytie veľkých pozemkov. Taktiež sa aplikuje v priemyselných parkoch na sledovanie majetku (asset tracking) a monitorovanie komplexných výrobných procesov, kde je potrebná vysoká spoľahlivosť a nízka latencia.
 
@@ -306,13 +310,14 @@ V \textbf{USA} sa Wi-Fi HaLow používa pre automatizáciu inteligentných domá
     \item \textbf{Austrália:} Farmy, požiarna bezpečnosť, monitorovanie nádrží (Morse Micro).
     \item \textbf{Európa:} Osvetlenie v Smart City, environmentálne senzory (Nemecko, Slovensko, Holandsko).
 \end{itemize}
-
+\cite{iotanalytics2018_lpwan}
 \noindent
 \textbf{Myšlienka:} Nie nahradiť LPWAN, ale doplniť ho: vytvoriť univerzálny "most" pre systémy, ktoré vyžadujú obojsmernú komunikáciu, vyššiu rýchlosť a nižšiu spotrebu energie ako štandardné Wi-Fi.
 
 \subsection{Trhové Trendy a Regionálna Vhodnosť LPWAN}
 \label{sec:regional_trends}
 \begin{table}[htbp]
+    \cite{iotanalytics2018_lpwan}
     \centering
     \caption{Trhové Trendy a Regionálna Vhodnosť LPWAN}
     \label{tab:regional_trends}
@@ -338,6 +343,7 @@ V \textbf{USA} sa Wi-Fi HaLow používa pre automatizáciu inteligentných domá
         \toprule
         \textbf{Odvetvie} & \textbf{LPWAN Technológie} & \textbf{Príklady} \\
         \midrule
+        \cite{5gtechworld2024_lpwan}
         Smart City / Mestský Život & LoRaWAN, NB-IoT, Sigfox & Parkovanie, osvetlenie, monitorovanie ovzdušia, odpad \\
         Maloobchod / Logistika & NB-IoT, LTE-M, LoRaWAN & Inteligentné police, RFID monitorovanie, správa zásob \\
         Priemyselný IoT / Automatizácia & LTE-M, NB-IoT, LoRaWAN & Výrobné linky, kontrola zariadení \\
