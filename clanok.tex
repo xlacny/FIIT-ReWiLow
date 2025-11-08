@@ -113,16 +113,22 @@ Prístup používaný na konštrukciu LPWAN-siete je \textbf{podobný} princípu
 
 V informatickom modernom svete sa čoraz viac a viac začínajú využívať produkty IoT (Internetu vecí), Množstvo produktov, od bezpečnostných kamier, smart chladiace prístrojov, smart mikrovlnné trúb až po jednoduchú komunikácia na rádiových zariadeniach  \cite{wifi_halow2021}.
 
-Wi-fi HaLow je štandard nadizajnovaný, oproti iným Wi-fi štandardom, na ďaleký prenos, vysokú energetickú úsporu a oproti rádiovým vlnám aj vyšší dátový prenos pre malý počet zariadení \cite{wifi_halow2021}. Technológie, ktoré majú implementovanú technológiu IEEE 802.11ah sa označujú ako Wi-fi HaLow (tm). 
-\\Väčší dosah štandardu Wi-fi HaLow  je vďaka fungovaniu v sub-1 GHz frekvenčnom pásme, zvyčajne 750 až 950 MHz. Spotreba energie je priamo úmerná frekvencií, teda Wi-fi HaLow štandard ušetrí viac energie \cite{quectel2023_halow}.
+Wi-fi HaLow je štandard nadizajnovaný, oproti iným Wi-fi štandardom, na ďaleký prenos, vysokú energetickú úsporu a oproti rádiovým vlnám aj vyšší dátový prenos pre malý počet zariadení \cite{wifi_halow2021}. Technológie, ktoré majú implementovanú technológiu IEEE 802.11ah sa označujú ako Wi-fi HaLow (tm).
+
+Väčší dosah štandardu Wi-fi HaLow  je vďaka fungovaniu v sub-1 GHz frekvenčnom pásme, zvyčajne 750 až 950 MHz. Spotreba energie je priamo úmerná frekvencií, teda Wi-fi HaLow štandard ušetrí viac energie \cite{quectel2023_halow}.
 
 \subsection{\textbf{Výkon Wi-Fi HaLow}}
 IEEE 802.11ah má oproti minulým štandardom rovnakého názvu možnosť vyhradiť určité časové úseky, pri ktorých môže zariadenie, ľudovo povedané, " spať" , nespôsobujúc problémy s kolíziou signálov či lepšie rozdelenie vysielaní vysielačov \cite{mdpi_halow_01} 
+Takáto funkcia sa nazýva \textbf{Tager Wake Time} (TWT), zariadenia sa teda prebúdzajú len v určených intervaloch. \cite{ieee_access_2019_raw}
+
+Vďaka podpore frekvenčne užších kanálov (1 až 16 MHz) je možné dosahovať pomerne výhodné rýchlosti od 150 kb/s až do 78 Mb/s, závisiac od konfigurácie. \cite{wifi_halow2021}
+Dosah signálu sa pohybuje v intervalu až do 1 km, záležiac od prekážok. Napríklad v meste by signal dosahoval približne 400 metrov.
+Štandard naviac podporuje až \textbf{8191} pripojených zariadení na jeden prístupný bod, čo prevyšuje limity klasických Wi-Fi technológií \cite{mdpi_halow_01} 
 
 
 % -------- porovnanie so súčasnými technológiami @Άρςεν_Κόζακ ⚜ (štandardizované ako 2.4) ---
 
-\subsection{Porovnanie LPWAN s inými modernými technológiami}
+\section{Porovnanie LPWAN s inými modernými technológiami}
 \label{sec:lpwan_vs_others}
 
 \subsubsection*{Filozofia LPWAN}
