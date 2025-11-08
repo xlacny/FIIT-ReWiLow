@@ -59,12 +59,44 @@
 
 
 \section{\bf Formulár VV-A}
-
 \subsection*{\bf A1}  %TOBIAS
-\subsection{Evidenčné číslo projektu}
-\qquad 01
-\subsection{Dátum podania}
-\qquad 5. novembra 2025
+\begin{table}[H]
+\centering
+\caption{Zákkladné informacie o projekte}
+\label {tab:basicinfo}
+\begin{tabularx}{\linewidth}{|l|l|X|}
+\hline
+01 & Evidenčné číslo projektu & NIČ \\
+\hline
+02 & Dátum podania & 5. novembra 2025 \\
+\hline
+03 & Názov projektu & Výskum Wi-fi  HaLow technológie \\
+\hline
+04 & Akronym projektu & ReWiLow \\
+\hline
+05 & Odbor vedy a techniky & Prírodné vedy - Informatické vedy \\
+\hline
+06 & Charakter výskumu & Hodnotiaci aplikovaný výskum \\
+\hline
+07 & Začiatok riešenia projektu & 30. septembra 2025 \\
+\hline
+08 & Koniec riešenia projektu & 15. augusta 2028 \\
+\hline
+09 & Anotácia & Naša skupina skúma štandard IEEE 802.11ah pre LPWAN (Low Power Wide Area Network – Nízkoenergetická rozsiahla sieť), bežne známy ako Wi-fi HaLow, so zameraním  na jeho architektonický dizajn, výkonové charakteristiky a vhodnosť pre komunikáciu v rámci Internetu vecí (IoT), komuníkaciu medzi strojmi (M2M) aj na trhu. Skúmané sú aj jedinečné technické vlastnosti HaLow, ako pre prevádzka pod 1GHz v nelicencovaných rádiových (ISM) pásiem, rozsšírený dosah, nízka spotreba energie, a aj vysoká hustota zariadení. Hodnotená je aj jeho použiteľnosť v reálnych scenároch, vrátane inteligentného poľnohospodárstva, priemyselnej automatizácie, monitorovania životného prostredia a inteligentných miest.
+V rámci projektu sa bude zameriavať aj na komparatívnu analýzu medzi Wi-Fi HaLow a inými LPWAN technológiami, príkladom sú LoRaWAN, Sigfox, alebo aj NB IoT najmä v ich parametroch, ako sú dosah, rýchlosť prenosu dát, latencia, energetická účinnosť a škálovateľnosť siete. Našim cieľom bude určiť konkrétne kontexty, v ktorých Wi-Fi HaLow ponúka výhody alebo obmedzenia v porovnaní s konkurečnými riešeniami LPWAN. Výsledky majú slúžiť ako podklad pre budúci rozvoj infraštruktúry IoT a stratégií konektivity na Slovensku \\
+\hline
+10 & Žiadateľská organizácia & STU FIIT \\
+\hline
+11 & Požadované finančné prostriedky & 300 000 € \\
+\hline
+12 & Spolufinancovanie projektu & --- \\
+\hline
+13 & Celkové náklady na projekt & približne 290 000 € \\
+\hline
+
+\end{tabularx}
+\end{table}
+
 \subsection*{\bf A2} %ADAM
 \begin{table}[H]
 \centering
@@ -204,9 +236,36 @@ Projekt dosiahne \textbf{TRL 3} (Analytické potvrdenie koncepcie), keďže jeho
 
 \subsection{\bf Formulár VV-C} %TOBIAS A ADAM
 \begin{table}[H]
-\begin{tabularx}{\linewidth}{|l|l|X|}
+\centering
+\caption{Rozpočet projektu}
+\label{tab:vv-c Rozpocet}
+\begin{tabularx}{\linewidth}{|X|c|X|X|X|X|X}
 \hline
-01 & AAAA \\
+& Etapa (Roky) & 1. fáza (2025-2026) & 2. fáza (2026-2027) & 3. fáza (2027-2028)  & Celkovo:  \\
+\hline
+01 & Bežné priame náklady & -- & -- & -- & -- \\
+\hline
+02 & Mzdové a ostatné osobné náklady & 28 000 & 60 000 & 22 000 & 110 000 \\
+\hline
+03 & Zdravotné a sociálne poistenie & 9 000 & 20 000 & 7 000 & 36 000 \\
+\hline
+04 & Cestovné náklady & 4 000 & 7 000 & 6 000 & 17 000  \\
+\hline
+05 & Materiál & 12 000 & 35 000 & 6 000 & 53 000  \\
+\hline
+06 & Služby & 5 000 & 10 000 & 5 000 & 20 000\\
+\hline
+07 & Energie, vodné, stočné komunikácie & 3 000 & 5 000 & 2 000 & 10 000\\
+\hline
+08 & Náklady na popularizáciu & - & 3 000 & 10 000 & 13 000\\
+\hline
+09 & Bežné nepriame náklady & 9 000 & 15 000 & 7 000 & 31 000\\
+\hline
+10 & Bežné náklady spolu & 70 000 & 155 000 & 65 000 & 290 000 \\
+\hline
+Celkove náklady z APVV& & - & - & - & 300 000 \\ %Celkove naklady apvv
+\hline
+Celkové náklady &  & - & - & - & -\\ % Celkove naklady na rok
 \hline
 \end{tabularx}
 \end{table}
@@ -214,10 +273,64 @@ Projekt dosiahne \textbf{TRL 3} (Analytické potvrdenie koncepcie), keďže jeho
 
 \subsection{\bf Formulár VV-D} %TOBIAS
 \begin{table}[H]
+\centering
+\caption{Harmonogram projektu}
+\label{tab:vv-d harmonogram}
 \begin{tabularx}{\linewidth}{|l|l|X|}
 \hline
-01 & AAAA \\
+Začiatok etapy & Koniec etapy & Názov etapy \\
+\hline %DÁTUMY ZAČÍNAJÚ
+& & \\
 \hline
+30.9.2025 & 13.11.2025 & Školenie, štúdium literatúry \\
+\hline
+15.11.2025 & 31.12.2025 & Analýza trhu, tvorba metód riešenia \\
+\hline
+1.1.2026 & 14.2.2026 & Interné diskusie, meetingy ohľadne problematiky \\
+\hline
+15.2.2026 & 15.3.2026  & Nakúpenie prvotných produktov HaLow\\
+\hline
+16.3.2026 & 18.4.2026  & Vypracovanie prehľadového článku pre projekt\\
+\hline
+20.4.2026 & 16.5.2026  & Stretnutia s APVV ohľadne financovania\\
+\hline
+22.5.2026 & 15.6.2026  & Kontaktovanie univerzít, spoluriešiteľov, partnerov z praxe\\
+\hline
+& & \\
+\hline
+1.7.2026 & 31.8.2026 & Nákup HaLow technológií \\
+\hline
+1.9.2026 & 31.10.2026 & Zostrojenie scenárov, protokolov na testovanie HaLow Technológie\\
+\hline
+1.11.2026 & 30.11.2026 & Príprava simulácií, nastavenie sietí\\
+\hline
+1.12.2026 & 31.1.2027  & Komparatívna analýza s inými produktami, rovnako testované\\
+\hline
+1.2.2027 & 31.3.2027  & Testovanie produktov HaLow\\
+\hline
+1.4.2027 & 14.5.2027  & Zber dát, štatistické spracovanie priebežných výsledkov\\
+\hline
+20.5.2027 & 15.6.2027  & Prezentácie priebežných výsledkov a štatistík pre APVV \\
+\hline
+& & \\
+\hline
+1.7.2027 & 31.8.2027 & Posledné experimenty, overovania experimentov \\
+\hline
+1.9.2027 & 30.9.2027  & Analýza nazbieraných dát\\
+\hline
+1.10.2027 & 31.10.2027  & Finalizácia, prepis článkov\\
+\hline
+1.11.2027 & 20.12.2027  & Metodológia, dotestovanie originálnych využití HaLow\\
+\hline
+30.12.2027 & 30.1.2028  & Dohoda a publikovanie vo vedeckých článkoch\\
+\hline
+1.2.2028 & 1.6.2028 & Verejné konferencie, prednášky na univerzitách, mediálne videá\\
+\hline
+1.5.2028 & 15.6 2028  & Odporučania pre budúcnosť výskumu HaLow technológie\\
+\hline
+20.6.2028 & 15.8.2028 & Stretnutie s APVV - Ukončenie projektu \\
+\hline
+
 \end{tabularx}
 \end{table}
 
