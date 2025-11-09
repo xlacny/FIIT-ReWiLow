@@ -17,10 +17,23 @@
 
 \setbeamercovered{transparent}
 
-\usepackage[slovak]{babel}
+%LANGUAGE
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+% \usepackage[utf8]{inputenc} % --- ODSTRÁNENÉ (DUPLIKÁT)
+\usepackage[slovak]{babel} % pre slovenský jazyk
+\usepackage{lmodern}         % --- PRIDANÉ: Pre lepšie fonty s T1
 \usepackage{url}
+\usepackage{booktabs} 
+\usepackage{array} 
+\usepackage{paralist} 
+\usepackage{verbatim} 
+\usepackage{subfig} 
+\usepackage{longtable} % --- PRIDANÉ: Opravuje chybu 'longtable undefined'
+\usepackage{csquotes}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[numbers]{natbib}
+\usepackage{graphicx} 	
 
 \usepackage{listings}
 
@@ -94,11 +107,31 @@
 \titlepage
 \end{frame}
 
-
-\begin{frame}[fragile=singleslide]\frametitle{O čom to je}
-
+\begin{frame}{Čo je to HaLow? \cite{wifi_halow2021}}
+\begin{itemize}
+  \item Štandard IEEE 802.11ah
+  \item Frekvenčné pásmo 750–950 MHz
+  \item Dlhý dosah, nízka spotreba energie
+  \item Až 8191 zariadení na 1 AP
+\end{itemize}
 \end{frame}
 
+\begin{frame}{Dizajn HaLow}
+\begin{itemize}
+  \item Užšie kanály (1–16 MHz)
+  \item Target Wake Time (TWT)
+  \item Zníženie kolízií a šetrná prevádzka
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Výkon HaLow}
+\begin{itemize}
+  \item Rýchlosť: 150 kb/s – 78 Mb/s
+  \item Dosah: do 1 km (v meste ~ 400 m)
+  \item Podpora 8191 zariadení
+  \item Energetická úspornosť vďaka nižšej frekvencii
+\end{itemize}
+\end{frame}
 
 \begin{frame}[fragile=singleslide]\frametitle{Prehľad}
 \tableofcontents
@@ -210,8 +243,9 @@ void na_druhu(int i) {
 \item Ale vždy je čo robiť ďalej\ldots{}
 \end{itemize}
 \end{frame}
-
-
+\section*{Zdroje}
+\bibliographystyle{unsrt}
+\bibliography{literatura}
 \end{document}
 
 
