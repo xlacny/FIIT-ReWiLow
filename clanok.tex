@@ -390,10 +390,35 @@ Analýza priemyselných aplikácií jasne ukazuje, že \textbf{žiadna jednotliv
 % návrhy toho, kde sa ešte dá použiť prínos do sveta
 % @ADAMEČKO
 % ------------------------------------------------------ %
+% --- PERSPEKTÍVY ROZVOJA A VYUŽITIA V  BUDÚCNOSTI ---
 \subsubsection{Perspektívy rozvoja a využitia LPWAN v budúcnosti}
 \label{sec:perspektivy}
-\noindent
-%(Tu bude umiestnený text o perspektívach...)
+
+Budúcnosť rozsiahlych sietí s nízkou spotrebou energie (LPWAN) je neoddeliteľne spojená s masívnym nasadením \textbf{Internetu vecí (IoT)}. Očakáva sa, že žiadna jednotlivá technológia nebude dominovať, ale trh sa rozdelí podľa špecifických požiadaviek, pričom **Wi-Fi HaLow** je pripravený zohrať kľúčovú úlohu ako hybridné riešenie \cite{newracom_disrupt}.
+
+\paragraph{1. Kľúčová pozícia Wi-Fi HaLow: Most medzi protokolmi}
+
+Štandard \textbf{Wi-Fi HaLow (IEEE 802.11ah)} sa vyvíja, aby zaplnil medzeru medzi krátkodosahovým Wi-Fi a tradičnými LPWAN protokolmi. Jeho perspektíva spočíva v unikátnej kombinácii vlastností:
+
+\begin{itemize}
+    \item \textbf{Vysoká priepustnosť a efektivita:} HaLow ponúka dátové rýchlosti až do \textbf{78 Mbps} \cite{silex_technology_lpwan}, čo je rádovo stovkykrát viac ako pri LoRa/Sigfox \cite{newracom_disrupt}. Táto rýchlosť je kľúčová pre aplikácie vyžadujúce prenos väčších dátových paketov, obrazových súborov, alebo pre \textbf{rýchle aktualizácie firmvéru (FOTA)}. HaLow dosahuje energetickú efektívnosť tým, že vďaka rýchlejšiemu prenosu zostáva rádio aktívne len veľmi krátku dobu a rýchlo prechádza do režimu spánku \cite{newracom_disrupt}.
+    \item \textbf{Rozšírený dosah a penetrácia:} Vďaka prevádzke vo frekvenčnom pásme pod 1 GHz dosahuje HaLow dosah až \textbf{1 km} v mestskom prostredí a poskytuje lepšiu penetráciu budovami a prekážkami ako štandardné Wi-Fi (2,4 GHz/5 GHz). To ho robí ideálnym pre rozsiahle interiérové a exteriérové nasadenia \cite{rcr_wireless_cases, mobile_world_live_halow}.
+    \item \textbf{Škálovateľnosť a jednoduchosť integrácie:} HaLow využíva natívnu \textbf{IP konektivitu} a známy Wi-Fi ekosystém. Vďaka mechanizmu \textbf{Restricted Access Window (RAW)} je schopný pod jedným prístupovým bodom efektívne obslúžiť tisíce zariadení, čo je kľúčové pre veľké priemyselné a mestské senzorové siete \cite{mobile_world_live_halow}.
+\end{itemize}
+
+\paragraph{2. Dominantné aplikačné scenáre pre Wi-Fi HaLow}
+
+HaLow má potenciál narušiť tradičné segmenty LPWAN a WPAN v nasledujúcich oblastiach:
+
+\begin{itemize}
+    \item \textbf{Priemyselný IoT (IIoT):} Spoľahlivé, rozsiahle pokrytie pre \textbf{sledovanie majetku v reálnom čase} (Asset Tracking) a \textbf{video dohľad} v skladoch a výrobných halách \cite{rcr_wireless_cases}.
+    \item \textbf{Smart Budovy a Kampusy:} Ideálny pre komplexné riadenie budov (HVAC, energetický manažment) a pre rozsiahle senzorové siete na veľkých pozemkoch \cite{rcr_wireless_cases}.
+    \item \textbf{Inteligentné Poľnohospodárstvo (Smart Farming):} Schopnosť pokryť rozsiahle polia jediným prístupovým bodom a poskytovať dostatočnú rýchlosť pre \textbf{monitoring a automatizáciu} \cite{rcr_wireless_cases}.
+\end{itemize}
+
+\paragraph{3. Celkový výhľad a konvergencia}
+
+Hoci NB-IoT a LTE-M budú naďalej profitovať z licencovaného spektra a etablovaných celulárnych sietí, HaLow poskytuje silnú alternatívu, ktorá je cenovo efektívnejšia a technicky vhodnejšia pre aplikácie vyžadujúce \textbf{balans medzi dosahom, vysokou hustotou a priepustnosťou} v rámci existujúcej IP infraštruktúry \cite{mobile_world_live_halow}.
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{literatura}
