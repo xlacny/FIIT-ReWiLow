@@ -374,7 +374,123 @@ Vzhľadom na strategickú geografickú polohu Bratislavy, kde sa plánuje realiz
 
 \subsubsection{Implementácia}
 
-TBD - ZallasVA
+\begin{itemize}
+\item { Projekt je rozdelený do troch hlavných fáz, ktoré sú popísané vo formulári VV-D aj s predpokládanými trvaniami daných podetáp\\
+Každá fáza je rozdelená do menších pracovných balíkov (skrátene PB), v ktorých sú uvedené aj milníky výskumu, na konci popisu fáze je jej výstup pre celkový projekt
+\begin{itemize}
+\item {\textbf{1. Fáza - Analýza literatúry a návrh plánu skúmania:}\\
+ {Cielom prvej fázy je získať poznatky o skúmanom štandarde 802.11ah (alebo Wi-fi HaLow) a vypracovanie plánu experimentov.}
+\begin{itemize}
+\item \textbf{PB1} - Štúdium literatúry, analýza trhu\\
+Prehľad vedeckých článkov o štandarde a LPWAN technológiách
+
+\textbf{Milník č.1: Vypracovanie analytickej správy o štandarde Wi-fi HaLow a konkurenčnej technológii}
+\item \textbf{PB2} - Metodika, plán výskumu\\
+Výber zariadení na experimenty, návrh výskumného postupu, definícia testovacích parametrov.
+
+\textbf{Milník č.2: Pripravená metodika merania parametrov štandardu (výkon, dosah, energetická efektivita)}\\
+\end{itemize}
+Výstupom bude prehľadový článok, ktorý môže byť publikovateľný v odborných článkoch.
+}
+\item {\textbf{2. Fáza - Experimentálne testovanie a analýza:}\\
+\begin{itemize}
+\item \textbf{PB3} - Implementácia, zostrojenie testovacieho prostredia\\
+\textbf{Milník č.3: Funkčné prostredie pre testovanie}\\
+\item \textbf{PB4} - Experimentálne testovanie a porovnanie LPWAN technológií\\
+Meranie dosahu, latencie, rýchlosti, energetickej náročnosti a stability signálu.\\
+\textbf{Milník č.4: Dokončené testovanie a získané dáta}\\
+\item \textbf{PB5} - Komparatívna analýza\\
+Porovanie HaLow so Sigfox,Lora z merateľných hladísk.
+\textbf{Milník č.5: Vyhotovená správa analýzy}\\
+\end{itemize}
+}
+Výstupom bude technická správa, prezentácie pre APVV, štatistické tabuľky pre interné použitie a návrh vedeckého článku
+\item {\textbf{3. Fáza - Finalizácia projektu, aplikácia a publikácia:}\\
+\begin{itemize}
+\item \textbf{PB6} - Overenie výsledkov\\
+Overenie konzistentnosti dát.\\
+\textbf{Milník č.6: Overená presnosť výsledkov}\\
+\item \textbf{PB7} - Návrhy aplikácií a implementácií Wi-fi HaLow\\
+Definovanie oblastí, kde by sa dalo HaLow aplikovať.\\
+\textbf{Milník č.7: Návrhy pre slovenskú infraštruktúru}\\
+\item \textbf{PB8} - Publikácia výsledkov\\
+Publikovanie vedeckých článkov, prezentácie na prednáškach, konferenciách a v odborných médiách.\\
+\textbf{Milník č.8: Publikované výstupy, mediálne výstupy}\\
+\end{itemize}
+Výstupom bude finalná správa projektu, vedecké publikácie, odporúčania pre budúci výskum a implementáciu IoT na Slovensku\\
+}
+\end{itemize}
+}
+\item {Riadenie projektu bude rozdelené do štyroch následujúcich úrovní:}
+
+\begin{itemize}
+\item Hlavný zodpovedný riešiteľ projektu - Strategické vedenie, komunikácia s APVV, schvaľovanie výstupov, rozpočtové plánovanie
+\item Zástupca hlavného riešiteľa - koordinuje výskumný tím, vedie interné stretnutia, dozerá na napĺňanie milníkov
+\item Výskumný tím (4 hlavní a 27 zamestnancov) - sú tu zahrnutí aj odborníci na jednotlivé časti projektu - sieťové technológie, dátová analytika, štatistika, IoT odborníci.
+\item Administratíva a technická podpora - účtovníctvo, materiál, technické vybavenie, záznamy o projekte
+\end{itemize}
+
+Projekt bude riadený nasledovnými procesmi:
+\begin {itemize}
+\item Pravidelné mesačné stretnutia - vyhodnocovanie pribehu projektu, plánovanie nasledujucého mesiaca
+\item Štvrťročné správy - sumár výsledkov, finančných tokov
+\item Interný informačný systém - Git: zdielanie dokumentov, výsledkov a interných správ
+\item Spolupráca s APVV a externá kontrola - dvakrát ročne sa uskutoční oficiálne stretnutie s APVV, kde sa zhodnotí pokrok.
+\end {itemize}
+
+\item Riziká implementácie projektu a spôsoby zmierenia:\\
+ Riziká môžu vzniknúť v technickej, organizačnej aj vo finančnej oblasti projektu:
+\begin{itemize}
+\item Technické riziko - Nedostupnosť komponentov alebo zariadení HaLow\\
+\textbf{Vytvorenie simulácií vnútri virtuálneho prostredia, alternatívne testovacie prostredia}
+
+\item Organizačné riziko - Nedostatočná komunikácia, neskoré dodanie dát, nestíhanie termínov\\
+\textbf{Zavedenie interného manažmentu úloh - Jira alebo pravidelné reporty výskumu}
+
+\item Finančné riziko - nedostatok financií, prekročenie rozpočtu\\
+\textbf{Rezervný fond, revízia výdavkov}
+
+\item Publikačné riziko - Odmietnutie vedeckého článku recenzentmi\\
+\textbf{Príprava alternatívnych publikácií a zapojenie sa do rôznych technických konferencií}
+\end {itemize}
+
+\item Adekvátnosť navrhnutého rozpočtu\\
+
+Navrhnutý rozpočet je vo výške 300 000 €, je primeraný dĺžke trvania (3 roky), rozsahu a aj technickej náročnosti cielov
+Finančná náročnosť je najmä v nákupe testovacej výbavy a v personálnej podpore počas celých troch rokov
+
+\begin{itemize}
+\item Mzdové a osobné náklady -- 110 tisíc € a odvody -- 36 tisíc €\\
+Čiastočné úväzky výskumného tímu sú dostatočné, aby boli pokryté osobnými nákladmi a sociálnych, či zdravotných odvodov. - priblížne 50 tisíc €\\
+Bude potrebné, aby bolo aj 30 zamestnancov adekvátne odmenených za meranie/testovanie/programovanie... - priblížne 60 tisíc €\\
+
+\item Materiál -- 53 tisíc €\\
+Nákup HaLow modulov, antén, meracích pristrojov (spektrálne analyzátory, generátory signálu, power metery, komunikačné analyzátory)\\
+Umožňuje overenie výkonu, dosahu a efektívnosti v približne reálnych podmienkach IoT komunikácie.
+
+\item Služby -- 20 tisíc €\\
+Externá analýza - (Excel/ChatGPT API), Kalibrácie prístrojov, prenájmy špeciálnych priestrojov na testovanie\\
+Niektoré z meraní potrebujú platené externé služby alebo špecializované softvéry (MATLAB)\\
+
+\item Cestovné náklady -- 17 tisíc €\\
+Konferencie, testovania v iných prostrediach (mestá, polia a pod.)\\
+
+\item Prevádzkové náklady + nepriame -- približne 40 tisíc €\\
+Prevádzka serverových zariadení, sieťové poplatky, údržba, administratívna podpora, účtovnícke služby\\
+
+\item Popularizácia a publikácie -- približne 13 tisíc €\\
+Príprava publikácií, ttvorba prezentačných materiálov a videí\\
+Poplatky za články konferencie, stánky sa pohybujú od tisícov eur, \\
+
+
+\end {itemize}
+
+\item Infraštruktúra pracoviska - STU FIIT\\
+Fakulta informatiky a informačných technológií Slovenskej Technickej Univerzity ponúka rozvinutú výskumnú infraštruktúru v oblastí, ktorých sa náš výskum dotýka.\\ Menovito sieťové technológie. Fakulta je vybavená najmodernejšími zariadeniami, vhodnými na skúmanie HaLow technológie a jej testovanie v areáloch laboratória sieťových technológií.\\
+Fakulta disponuje odborníkmi v oblasti nášho výskumu: bezdrôtové systémy.\\
+STU FIIT je teda vhodným priestorom na skúmanie problematiky Wi-fi HaLow.
+
+\end{itemize}
 
 
 \end{document}
