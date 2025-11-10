@@ -112,43 +112,46 @@
 
 \begin{frame}{Čo je to HaLow? \cite{wifi_halow2021}}
 \begin{itemize}
-  \item Štandard \emp{IEEE 802.11ah}
-  \item Frekvenčné pásmo 750–950 MHz
-  \item \emp{Dlhý dosah}, \emp{nízka spotreba energie}
-  \item Až 8191 zariadení na 1 AP
+  \item Štandard \emp{IEEE 802.11ah}
+  \item Frekvenčné pásmo 750-950 MHz
+  \item \emp{Dlhý dosah}, \emp{nízka spotreba energie}
+  \item Až 8191 zariadení na 1 AP
 \end{itemize}
-\begin{figure}
-    \centering
-    % Použitie placeholderu pre obrázok
-    \framebox{\parbox{0.5\textwidth}{\centering
-        \vspace{1cm}
-        \textbf{Miesto pre obrázok} \\
-        \small\textit{Prehľad štandardu 802.11ah}
-        \vspace{1cm}
-    }}
-    \caption{Dosah HaLow}
-    \label{fig:pres_halow01}
+\begin{figure}[r]
+    \centering
+    \includegraphics[width=0.5\textwidth]{80211ah_overview.png} 
+    % \vspace{3cm}
+        % \textbf{Miesto pre obrázok} \\
+        % \small\textit{LPWAN sieť (obrázok LPWAN\_pc1.png)}
+        % \vspace{3cm}
+    \caption{Dosah HaLow}
+    \label{fig:pres_halow01}
 \end{figure}
 \end{frame}
 
 \begin{frame}{Dizajn HaLow}
 \begin{itemize}
-  \item Užšie kanály (1–16 MHz)
-  \item \emp{Target Wake Time (TWT)} pre optimalizáciu spánku
-  \item Zníženie kolízií a šetrná prevádzka
+  \item Užšie kanály (1-16 MHz)
+  \item \emp{Target Wake Time (TWT)} pre optimalizáciu spánku
+  \item Zníženie kolízií a šetrná prevádzka
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Výkon HaLow}
 \begin{itemize}
-  \item Rýchlosť: 150 kb/s – \emp{78 Mb/s}
-  \item Dosah: \emp{do 1 km} (v meste ~ 400 m)
-  \item Podpora 8191 zariadení
-  \item Energetická úspornosť vďaka nižšej frekvencii
+  \item Rýchlosť: 150 kb/s - \emp{78 Mb/s}
+  \item Dosah: \emp{do 1 km} (v meste ~ 400 m)
+  \item Podpora 8191 zariadení
+  \item Energetická úspornosť vďaka nižšej frekvencii
 \end{itemize}
 \end{frame}
 
-% part 2 - Obsah/Prehľad
+% part 2 - Nereg - uniqueness of the HaLow standard
+
+% slide 1 - L1 - free frequencies, greater penetration and reach, cheaper equipment
+
+% slide 2 - higher levels - built-in tried and true technologies (WPA3, TCP/IP), device class mixing
+
 \begin{frame}[fragile=singleslide]\frametitle{Prehľad}
 \tableofcontents
 \end{frame}
@@ -162,8 +165,8 @@
 \subsection{LoRaWAN}
 \textbf{1. LoRaWAN:} Jeden z najrozšírenejších implementovaných LPWAN protokolov. Využíva moduláciu Chirp Spread Spectrum (CSS) v nelicencovaných frekvenčných pásmach.
 \begin{itemize}
-    \item Dosah: 2 km (v meste) – 15 km (vo vidieckom prostredí).
-    \item Rýchlosť: 0,3 – 27 kbps.
+    \item Dosah: 2 km (v meste) - 15 km (vo vidieckom prostredí).
+    \item Rýchlosť: 0,3 - 27 kbps.
     \item Kľúčová funkcia: Obojsmerná výmena dát (uplink/downlink) a možnosť vytvárať súkromné LoRa siete bez nutnosti operátorov.
 \end{itemize}
 
@@ -172,7 +175,7 @@
 \begin{itemize}
     \item Dosah: až do 40 km.
     \item Veľkosť paketu: 12 bajtov uplink, 8 bajtov downlink.
-    \item Nevýhody: Jednosmerný alebo veľmi obmedzený obojsmerný kanál. Vysoká latencia (oneskorenie) – meraná v sekundách.
+    \item Nevýhody: Jednosmerný alebo veľmi obmedzený obojsmerný kanál. Vysoká latencia (oneskorenie) - meraná v sekundách.
 \end{itemize}
 
 \subsection{NB-IoT (Narrowband IoT)}
@@ -196,14 +199,14 @@
     \item Výhoda: Transparentná štruktúra, voľný prístup k štandardu a nekomerčné konzorcium.
 \end{itemize}
 
-\subsection{Ingenu (RPMA – Random Phase Multiple Access)}
+\subsection{Ingenu (RPMA - Random Phase Multiple Access)}
 \textbf{6. Ingenu:} Poskytuje konektivitu na dlhé vzdialenosti s vysokou priepustnosťou. Ponúka robustný sieťový výkon, odolnosť voči rušeniu a pokročilé bezpečnostné funkcie.
 
 \section{Porovnávacia Analýza a Trhové Trendy}
 
 \begin{table}[h!]
     \centering
-    \caption{Porovnávacia Matica Parametrov LPWAN Technológií \cite{literatura}}
+    \caption{Porovnávacia Matica Parametrov LPWAN Technológií} % \cite{literatura}
     \begin{tabular}{l c c c c}
         \toprule
         \textbf{Parameter} & \textbf{NB-IoT} & \textbf{LTE-M} & \textbf{LoRaWAN} & \textbf{Sigfox} \\
@@ -223,7 +226,7 @@
 
 \begin{table}[h!]
     \centering
-    \caption{Porovnanie Wi-Fi HaLow s LPWAN \cite{literatura, literatura}}
+    \caption{Porovnanie Wi-Fi HaLow s LPWAN}
     \begin{tabular}{l l l}
         \toprule
         \textbf{Kritérium} & \textbf{Wi-Fi HaLow} & \textbf{Porovnanie s LPWAN} \\
@@ -245,7 +248,7 @@
 
 \begin{table}[h!]
     \centering
-    \caption{Trhové Trendy a Regionálna Vhodnosť LPWAN \cite{literatura}}
+    \caption{Trhové Trendy a Regionálna Vhodnosť LPWAN}
     \begin{tabular}{l l c l}
         \toprule
         \textbf{Technológia} & \textbf{Hlavné Regióny} & \textbf{Podiel na Trhu} & \textbf{Trendy} \\
