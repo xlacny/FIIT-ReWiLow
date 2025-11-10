@@ -21,14 +21,14 @@
 \usepackage[T1]{fontenc}
 % \usepackage[utf8]{inputenc} % --- ODSTRÁNENÉ (DUPLIKÁT)
 \usepackage[slovak]{babel} % pre slovenský jazyk
-\usepackage{lmodern}         % --- PRIDANÉ: Pre lepšie fonty s T1
+\usepackage{lmodern} % PRIDANÉ: Pre lepšie fonty s T1
 \usepackage{url}
-\usepackage{booktabs} 
-\usepackage{array} 
-\usepackage{paralist} 
-\usepackage{verbatim} 
-\usepackage{subfig} 
-\usepackage{longtable} % --- PRIDANÉ: Opravuje chybu 'longtable undefined'
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{paralist}
+\usepackage{verbatim}
+\usepackage{subfig}
+\usepackage{longtable} % PRIDANÉ: Opravuje chybu 'longtable undefined'
 \usepackage{csquotes}
 \usepackage{url}
 \usepackage{hyperref}
@@ -36,6 +36,7 @@
 \usepackage{graphicx} 	
 
 \usepackage{listings}
+\usepackage{multirow} % Pre tabuľky
 
 \lstset{language=C++,basicstyle=\fontsize{8}{9.6}\selectfont,showstringspaces=false,columns=fullflexible,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fullflexible}
 %\lstset{language=C,basicstyle=\fontsize{10.5}{12.6}\selectfont,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fixed}
@@ -107,166 +108,173 @@
 \titlepage
 \end{frame}
 
-% part 1 - ZallasVA
+% part 1 - ZallasVA - HaLow Introduction (User's original slides)
 
 \begin{frame}{Čo je to HaLow? \cite{wifi_halow2021}}
 \begin{itemize}
-  \item Štandard IEEE 802.11ah
-  \item Frekvenčné pásmo 750–950 MHz
-  \item Dlhý dosah, nízka spotreba energie
-  \item Až 8191 zariadení na 1 AP
-
-
-\begin{figure}[r]
-    \centering
-    \includegraphics[width=0.5\textwidth]{80211ah_overview.png} 
-    % \vspace{3cm}
-        % \textbf{Miesto pre obrázok} \\
-        % \small\textit{LPWAN sieť (obrázok LPWAN\_pc1.png)}
-        % \vspace{3cm}
-    \caption{Dosah HaLow}
-    \label{fig:pres_halow01}
-\end{figure}
-
-
+  \item Štandard \emp{IEEE 802.11ah}
+  \item Frekvenčné pásmo 750–950 MHz
+  \item \emp{Dlhý dosah}, \emp{nízka spotreba energie}
+  \item Až 8191 zariadení na 1 AP
 \end{itemize}
+\begin{figure}
+    \centering
+    % Použitie placeholderu pre obrázok
+    \framebox{\parbox{0.5\textwidth}{\centering
+        \vspace{1cm}
+        \textbf{Miesto pre obrázok} \\
+        \small\textit{Prehľad štandardu 802.11ah}
+        \vspace{1cm}
+    }}
+    \caption{Dosah HaLow}
+    \label{fig:pres_halow01}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Dizajn HaLow}
 \begin{itemize}
-  \item Užšie kanály (1–16 MHz)
-  \item Target Wake Time (TWT)
-  \item Zníženie kolízií a šetrná prevádzka
+  \item Užšie kanály (1–16 MHz)
+  \item \emp{Target Wake Time (TWT)} pre optimalizáciu spánku
+  \item Zníženie kolízií a šetrná prevádzka
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Výkon HaLow}
 \begin{itemize}
-  \item Rýchlosť: 150 kb/s – 78 Mb/s
-  \item Dosah: do 1 km (v meste ~ 400 m)
-  \item Podpora 8191 zariadení
-  \item Energetická úspornosť vďaka nižšej frekvencii
+  \item Rýchlosť: 150 kb/s – \emp{78 Mb/s}
+  \item Dosah: \emp{do 1 km} (v meste ~ 400 m)
+  \item Podpora 8191 zariadení
+  \item Energetická úspornosť vďaka nižšej frekvencii
 \end{itemize}
 \end{frame}
 
-% part 2 - Nereg - uniqueness of the HaLow standard
-
+% part 2 - Obsah/Prehľad
 \begin{frame}[fragile=singleslide]\frametitle{Prehľad}
 \tableofcontents
-
-epik
-epik2
-bigepik
-
 \end{frame}
 
+% ==========================================================
+% ZAČIATOK SEKCIÍ S NOVÝM OBSAHOM OD ARSENA KOZAKA
+% ==========================================================
 
-\section{Nejaká časť}
-% príkaz \ssection by vytvoril zvláštný slajd s názvom časti - v krátkych prezentáciách to prekáža, lebo oberá o čas
+\section{Kľúčové LPWAN Protokoly}
 
-\begin{frame}[fragile=singleslide]\frametitle{Nejaký slajd}
+\subsection{LoRaWAN}
+\textbf{1. LoRaWAN:} Jeden z najrozšírenejších implementovaných LPWAN protokolov. Využíva moduláciu Chirp Spread Spectrum (CSS) v nelicencovaných frekvenčných pásmach.
 \begin{itemize}
-\item Odrážky na prvej úrovni
-\item Môže ich byť viac
-	\begin{itemize}
-	\item Toto je už druhá úroveň
-	\item Ďalšia odrážka
-	\end{itemize}
-\item Pokračuje prvá úroveň
+    \item Dosah: 2 km (v meste) – 15 km (vo vidieckom prostredí).
+    \item Rýchlosť: 0,3 – 27 kbps.
+    \item Kľúčová funkcia: Obojsmerná výmena dát (uplink/downlink) a možnosť vytvárať súkromné LoRa siete bez nutnosti operátorov.
 \end{itemize}
-\end{frame}
 
-
-
-\section{Ďalšia časť}
-
-\begin{frame}[fragile=singleslide]\frametitle{Ďalší slajd}
+\subsection{Sigfox}
+\textbf{2. SigFox:} Optimalizovaný pre masový IoT (Internet vecí) s veľmi nízkymi dátovými rýchlosťami. Pracuje v rádiových pásmach ISM.
 \begin{itemize}
-\item Nejaký text
-\item Ďalší text -- \emph{zvýraznený text}
-\item \emp{Kľúčová poznámka} % príkaz definovaný v preambule
-
-% odrážka s odkazom na zdroj:
-\item Bol použitý balík beamer\footcite{\url{https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
+    \item Dosah: až do 40 km.
+    \item Veľkosť paketu: 12 bajtov uplink, 8 bajtov downlink.
+    \item Nevýhody: Jednosmerný alebo veľmi obmedzený obojsmerný kanál. Vysoká latencia (oneskorenie) – meraná v sekundách.
 \end{itemize}
-\end{frame}
 
+\subsection{NB-IoT (Narrowband IoT)}
 
-\begin{frame}[fragile=singleslide]\frametitle{Slajd len s obrázkom}
-%\includegraphics[scale=.35]{diagram.pdf}
-% pridajte vlastný obrázok a zrušte znák % pred príkazom \includegraphics vo formáte PDF prípadne PNG alebo JPG
-% scale určuje veľkosť obrázku
-
-{\tiny Nejaká poznámka k obrázku, možno zdroj\ldots}
-\end{frame}
-
-
-\begin{frame}[fragile=singleslide]\frametitle{Zvýraznenie syntaxe}
+\textbf{3. NB-IoT:} Optimalizovaný pre IoT aplikácie s nízkou šírkou pásma, najmä v husto zastavaných mestských prostrediach.
 \begin{itemize}
-\item Na zvýraznenie syntaxe stačí použiť balík listings so správne nastaveným programovacím jazykom
-\begin{lstlisting}
-int na_druhu(int i) {
-   return i * i;
-}
-
-int main() {
-   printf("%d", na_druhu(118));
-   return 0;
-}
-\end{lstlisting}
-
-\item Jazyk C++ je ešte zaujímavejší: je multiparadigmový\footcite{\url{J. O. Coplien. Multi-Paradigm Design for C++. Addison-Wesley, 1998.}}
+    \item Typické aplikácie: Inteligentné budovy, zámky, pouličné osvetlenie, mestské senzory.
+    \item Výhoda: Pracuje na existujúcich mobilných sieťach LTE so zaručenou Kvalitou Služby (QoS - Quality of Service).
 \end{itemize}
-\end{frame}
 
-
-\begin{frame}[fragile=singleslide]\frametitle{Rámiky}
-\begin{poznamka}
-Text možno uviesť v rámiku
-\end{poznamka}
-
+\subsection{LTE-M / Cat-M1}
+\textbf{4. LTE-M:} Funguje na existujúcej infraštruktúre LTE a dosahuje dátové rýchlosti až do 1 Mbps. Umožňuje komunikáciu v reálnom čase s nízkou latenciou. Ideálny pre mobilné zariadenia a nositeľnú elektroniku.
 \begin{itemize}
-\item Program
-
-\begin{program}
-\begin{lstlisting}
-void main() {
-   printf("%d", na_druhu(118));
-}
-
-void na_druhu(int i) {
-   return i * i;
-}
-\end{lstlisting}
-\end{program}
-
-\item Výstup
-\begin{vystup}
-\begin{lstlisting}
-13924
-\end{lstlisting}
-\end{vystup}
-
+    \item Pozícia: Predstavuje optimálnu rovnováhu medzi rýchlosťou a úsporou energie. Plná podpora mobility.
 \end{itemize}
-\end{frame}
 
+\subsection{Weightless (SIG)}
+\textbf{5. Weightless (SIG):} Otvorený štandard LPWAN, navrhnutý pre IoT. Ponúka flexibilné možnosti nasadenia a vďaka svojej otvorenosti umožňuje rôznorodé prípady použitia.
+\begin{itemize}
+    \item Typ: Otvorený štandard (open standard IoT LPWAN), sub-1 GHz.
+    \item Výhoda: Transparentná štruktúra, voľný prístup k štandardu a nekomerčné konzorcium.
+\end{itemize}
+
+\subsection{Ingenu (RPMA – Random Phase Multiple Access)}
+\textbf{6. Ingenu:} Poskytuje konektivitu na dlhé vzdialenosti s vysokou priepustnosťou. Ponúka robustný sieťový výkon, odolnosť voči rušeniu a pokročilé bezpečnostné funkcie.
+
+\section{Porovnávacia Analýza a Trhové Trendy}
+
+\begin{table}[h!]
+    \centering
+    \caption{Porovnávacia Matica Parametrov LPWAN Technológií \cite{literatura}}
+    \begin{tabular}{l c c c c}
+        \toprule
+        \textbf{Parameter} & \textbf{NB-IoT} & \textbf{LTE-M} & \textbf{LoRaWAN} & \textbf{Sigfox} \\
+        \midrule
+        Spektrum & Licencované & Licencované & Nelicencované & Nelicencované \\
+        Dosah (mesto/vidiek) & $\approx 1/10$ km & $\approx 1/10$ km & $\approx 5/20$ km & $\approx 10/40$ km \\
+        Rýchlosť & 26 -- 66 kbps & až 1 Mbps & 0.3 -- 5.5 kbps & 0.1 kbps \\
+        Životnosť batérie & Roky & Roky & Roky & Roky \\
+        Latencia & 1.2 -- 10 s & $<$ 60 ms & Sekundy & Sekundy \\
+        Mobilita & Obmedzená & Áno & Áno & Áno \\
+        Súkromné siete & Nie & Nie & Áno & Nie \\
+        Max. Paket & 1280 B & 1280 B & 11 -- 242 B & 12 B (UL) \\
+        Výkon & 20 -- 120 mW & 60 -- 200 mW & 25 -- 100 mW & 20 -- 100 mW \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \caption{Porovnanie Wi-Fi HaLow s LPWAN \cite{literatura, literatura}}
+    \begin{tabular}{l l l}
+        \toprule
+        \textbf{Kritérium} & \textbf{Wi-Fi HaLow} & \textbf{Porovnanie s LPWAN} \\
+        \midrule
+        Frekvenčný Rozsah & $<$ 1 GHz (900 MHz) & Lepšia penetrácia cez steny a vegetáciu \\
+        Prevádzkový Dosah & do 1 km & Menej ako LoRa/Sigfox, ale viac ako štandardné Wi-Fi \\
+        Rýchlosť & až 78 Mbps (krátke vzdial.) & Výrazne vyššia ako LPWAN \\
+        Pripojenia & $>$ 8000 zariadení & Škálovateľnosť ako NB-IoT \\
+        Latencia & niekoľko ms & Lepšia ako väčšina LPWAN \\
+        Spotreba Energie & oveľa menej ako štandardné Wi-Fi & Bližšie k LPWAN \\
+        Licencovanie & Nelicencované, otvorený štandard & Nevyžaduje operátorov \\
+        \midrule
+        \textbf{Pozícia} & \multicolumn{2}{l}{``Most'' medzi Wi-Fi a LPWAN (optimálna rovnováha rýchlosť $\leftrightarrow$ energia)}\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Trhové Trendy a Regionálna Vhodnosť LPWAN}
+
+\begin{table}[h!]
+    \centering
+    \caption{Trhové Trendy a Regionálna Vhodnosť LPWAN \cite{literatura}}
+    \begin{tabular}{l l c l}
+        \toprule
+        \textbf{Technológia} & \textbf{Hlavné Regióny} & \textbf{Podiel na Trhu} & \textbf{Trendy} \\
+        \midrule
+        NB-IoT & Čína (84\%), EÚ, Blízky Východ & $\sim 23\%$ (2027) & Rozvoj smart-city, urban-IoT \\
+        LTE-M & USA, EÚ, Austrália & $\sim 32\%$ (2023) & Rast vďaka LTE infraštruktúre \\
+        LoRaWAN & Sev. Amerika, EÚ, APAC & $\sim 40\%$ (2023), $\rightarrow 35\%$ (2027) & Líder mimo Číny, otvorený ekosystém \\
+        Sigfox & EÚ (Francúzsko, Španielsko), Japonsko, Brazília & Menší, ale stabilný & Medzera pre nízkonákladové senzory \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+% ==========================================================
+% KONIEC NOVÉHO OBSAHU
+% ==========================================================
 
 
 \section*{Zhodnotenie a ďalšia práca}
 % hviezdička zabezpečí, aby sa táto časť neocitla v prehľade prezentácie - každá prezentácia má zhodnotenie a prehľad by sa tým zbytočne zahlcoval
 
-\begin{frame}[fragile=singleslide]\frametitle{Zhodnotenie a ďalšia práca}
+\begin{frame}[fragile=singleslide]\frametitle{Zhodnotenie a Ďalšia Práca}
 \begin{itemize}
-\item Každá prezentácia musí byť nejako uzavretá
-\item Ale vždy je čo robiť ďalej\ldots{}
+\item Analyzovali sme 6 hlavných LPWAN protokolov a ich pozíciu na trhu.
+\item \emp{Wi-Fi HaLow} predstavuje kľúčovú medzeru medzi klasickým Wi-Fi a LPWAN technológiami vďaka optimálnej rovnováhe rýchlosti a dosahu.
+\item \kw{Ďalšia práca:} Experimentálne overenie výkonu HaLow v reálnych podmienkach (penetrácia, latencia) a porovnanie so zavedenými štandardmi ako LoRaWAN.
 \end{itemize}
 \end{frame}
 \section*{Zdroje}
 \bibliographystyle{unsrt}
 \bibliography{literatura}
 \end{document}
-
-
-
-
-Text \end{document} za príkazom \end{document} LaTeX ignoruje, takže tu môžete odkladať veci (aj celé slajdy), ktoré nechcete vymazať, lebo ich ešte možno budete potrebovať, avšak ich v danom momente nechcete mať v slajdoch.
