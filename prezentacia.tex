@@ -112,12 +112,13 @@
 
 % part 1 - ZallasVA - HaLow Introduction (User's original slides)
 
+\section {Základné informácie o HaLow}
+
 \begin{frame}{Čo je to HaLow? \cite{wifi_halow2021}}
 \begin{itemize}
   \item Štandard \emp{IEEE 802.11ah}
   \item Frekvenčné pásmo 750-950 MHz
   \item \emp{Dlhý dosah}, \emp{nízka spotreba energie}
-  \item Až 8191 zariadení na 1 AP
 \end{itemize}
 \begin{figure}[r]
     \centering
@@ -137,14 +138,24 @@
   \item \emp{Target Wake Time (TWT)} pre optimalizáciu spánku
   \item Zníženie kolízií a šetrná prevádzka
 \end{itemize}
+\begin{figure}[r]
+    \centering
+    \includegraphics[width=0.5\textwidth]{target-wake-time-wifi-6-6e} 
+    % \vspace{3cm}
+        % \textbf{Miesto pre obrázok} \\
+        % \small\textit{LPWAN sieť (obrázok LPWAN\_pc1.png)}
+        % \vspace{3cm}
+    \caption{Target Wake Time \cite{twt}}
+    \label{fig:pres_halow02}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Výkon HaLow}
 \begin{itemize}
   \item Rýchlosť: 150 kb/s - \emp{78 Mb/s}
   \item Dosah: \emp{do 1 km} (v meste ~ 400 m)
-  \item Podpora 8191 zariadení
   \item Energetická úspornosť vďaka nižšej frekvencii
+  \item Až 8191 zariadení na 1 AP
 \end{itemize}
 \end{frame}
 
