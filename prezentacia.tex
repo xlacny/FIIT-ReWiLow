@@ -211,7 +211,10 @@
 \begin{frame}{Porovnávacia Matica Parametrov LPWAN \cite{dfrobot2025_lpwan}}
   \begin{table}[h!]
     \centering
-    \begin{tabular}{l c c c c}
+    \setlength{\tabcolsep}{3pt} % zmenší horizontálne medzery
+    \renewcommand{\arraystretch}{0.9} % zmenší výšku riadkov
+    \scriptsize % menší font, aby sa zmestilo na slide
+    \begin{tabular}{p{2.3cm} c c c c}
       \toprule
       \textbf{Parameter} & \textbf{NB-IoT} & \textbf{LTE-M} & \textbf{LoRaWAN} & \textbf{Sigfox} \\
       \midrule
@@ -219,7 +222,7 @@
       Dosah (mesto/vidiek) & 1/10 km & 1/10 km & 5/20 km & 10/40 km \\
       Rýchlosť & 26–66 kbps & až 1 Mbps & 0.3–5.5 kbps & 0.1 kbps \\
       Životnosť batérie & Roky & Roky & Roky & Roky \\
-      Latencia & 1.2–10 s & < 60 ms & Sekundy & Sekundy \\
+      Latencia & 1.2–10 s & <60 ms & Sekundy & Sekundy \\
       Mobilita & Obmedzená & Áno & Áno & Áno \\
       Súkromné siete & Nie & Nie & Áno & Nie \\
       Max. paket & 1280 B & 1280 B & 11–242 B & 12 B (UL) \\
@@ -228,6 +231,7 @@
     \end{tabular}
   \end{table}
 \end{frame}
+
 
 \section{Perspektíva Wi-Fi HaLow}
 \begin{frame}{Porovnanie Wi-Fi HaLow s LPWAN \cite{silex_technology_lpwan}}
