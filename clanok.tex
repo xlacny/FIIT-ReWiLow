@@ -427,6 +427,64 @@ HaLow má potenciál narušiť tradičné segmenty LPWAN a WPAN v nasledujúcich
 \paragraph{3. Celkový výhľad a konvergencia}
 
 Hoci NB-IoT a LTE-M budú naďalej profitovať z licencovaného spektra a etablovaných celulárnych sietí, HaLow poskytuje silnú alternatívu, ktorá je cenovo efektívnejšia a technicky vhodnejšia pre aplikácie vyžadujúce \textbf{balans medzi dosahom, vysokou hustotou a priepustnosťou} v rámci existujúcej IP infraštruktúry \cite{mobile_world_live_halow}.
+ % ------------------------------------------------------
+% NOVÁ VEDECKÁ ČASŤ - VLOŽIŤ DO clanok.tex
+% ------------------------------------------------------
+
+\section{Návrh experimentálneho výskumu}
+\label{sec:vyskum}
+
+Na základe analýzy teoretických vlastností technológie Wi-Fi HaLow a jej porovnania s konkurenčnými LPWAN štandardmi (kapitola \ref{sec:lpwan_vs_others}) bol formulovaný návrh experimentálneho výskumu. Cieľom nie je len implementácia technológie, ale predovšetkým empirická verifikácia jej prenosových parametrov v špecifických podmienkach, ktoré nie sú dostatočne pokryté existujúcou literatúrou.
+
+\subsection{Vedecké ciele a hypotézy}
+Hlavným cieľom výskumu je kvantifikovať vplyv fyzických prekážok a elektromagnetického rušenia na priepustnosť a latenciu siete IEEE 802.11ah v porovnaní so štandardom LoRaWAN.
+
+\noindent Stanovujeme nasledujúce výskumné otázky a hypotézy:
+\begin{itemize}
+    \item \textbf{Hypotéza H1:} V prostredí s vysokou hustotou prekážok (železobetónové konštrukcie) vykáže Wi-Fi HaLow pokles priepustnosti o menej ako 40 \% oproti referenčnému meraniu v priamej viditeľnosti (LOS), zatiaľ čo latencia zostane pod hranicou 100 ms.
+    \item \textbf{Hypotéza H2:} Energetická efektivita mechanizmu Target Wake Time (TWT) pri HaLow prekoná režim spánku LoRaWAN triedy A pri intervaloch odosielania dát kratších ako 60 sekúnd.
+\end{itemize}
+
+\subsection{Metodika výskumu (Priebeh)}
+Výskum bude prebiehať v troch fázach, pričom kombinuje simulačné modelovanie s fyzickým meraním na reálnom hardvéri.
+
+\subsubsection*{Fáza 1: Simulačné modelovanie}
+V prvej fáze bude vytvorený topologický model siete v prostredí \textbf{NS-3 (Network Simulator 3)} s modulom pre 802.11ah.
+\begin{itemize}
+    \item \textbf{Simulačný scenár:} Hviezdicová topológia s jedným prístupovým bodom (AP) a variabilným počtom staníc (STA) od 10 do 1000.
+    \item \textbf{Sledované parametre:} Bude sa simulovať zaťaženie siete (Network Load) a sledovať miera stratených paketov (Packet Error Rate - PER) pri kolíziách.
+\end{itemize}
+
+\subsubsection*{Fáza 2: Experimentálne meranie (Testbed)}
+Pre fyzické merania bude zostavené testovacie prostredie pozostávajúce z modulov (napr. Newracom alebo Alfa Network) operujúcich vo frekvenčnom pásme 868 MHz (EU).
+Merania budú prebiehať v dvoch prostrediach:
+\begin{enumerate}
+    \item \textbf{Laboratórne podmienky (Interiér):} Testovanie penetrácie signálu cez steny rôznej hrúbky (tehla, betón).
+    \item \textbf{Exteriér (Areál STU):} Meranie maximálneho dosahu pri zachovaní minimálnej priepustnosti 150 kbps.
+\end{enumerate}
+
+\subsection{Metriky a zber dát}
+Kľúčovým aspektom vedeckej časti je presný zber dát. Počas experimentov budú zaznamenávané nasledujúce metriky:
+\begin{itemize}
+    \item \textbf{RSSI (Received Signal Strength Indicator):} Úroveň prijatého signálu [dBm].
+    \item \textbf{SNR (Signal-to-Noise Ratio):} Odstup signálu od šumu [dB].
+    \item \textbf{Throughput:} Reálna dátová priepustnosť na aplikačnej vrstve (merané pomocou nástroja Iperf).
+    \item \textbf{Latency:} Obojsmerné oneskorenie (RTT) pre ICMP pakety.
+\end{itemize}
+
+\section{Predpokladané výstupy a prínos výskumu}
+\label{sec:vystupy}
+
+Realizácia navrhovaného výskumu prinesie nasledujúce konkrétne výstupy, ktoré presahujú rámec bežnej implementácie:
+
+\begin{enumerate}
+    \item \textbf{Komparatívna matica výkonnosti:} Súbor nameraných dát porovnávajúci HaLow a LoRaWAN v identických podmienkach. Tento výstup potvrdí alebo vyvráti marketingové tvrdenia výrobcov čipov.
+    \item \textbf{Model útlmu signálu:} Matematický model popisujúci šírenie signálu 802.11ah v špecifickom prostredí univerzitného kampusu, ktorý môže byť použitý pre plánovanie IoT sietí v podobných budovách.
+    \item \textbf{Odporúčania pre konfiguráciu:} Sada optimálnych parametrov (MCS index, Guard Interval) pre rôzne scenáre nasadenia (statické senzory vs. video stream), overená experimentálne.
+\end{enumerate}
+
+Výsledky výskumu budú slúžiť ako podklad pre návrh robustnej senzorovej siete pre monitorovanie environmentálnych veličín v rámci "Smart Campus" riešení, pričom poskytnú vedecky podložené argumenty pre výber komunikačnej technológie.
+
 \newpage
 \bibliographystyle{unsrt}
 \bibliography{literatura}
