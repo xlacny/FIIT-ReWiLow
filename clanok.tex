@@ -428,56 +428,56 @@ Hoci NB-IoT a LTE-M budú naďalej profitovať z licencovaného spektra a etablo
 \section{Návrh experimentálneho výskumu}
 \label{sec:vyskum}
 
-Na základe analýzy teoretických vlastností technológie Wi-Fi HaLow a jej porovnania s konkurenčnými LPWAN štandardmi (kapitola \ref{sec:lpwan_vs_others}) bol formulovaný návrh experimentálneho výskumu. Cieľom nie je len implementácia technológie, ale predovšetkým empirická verifikácia jej prenosových parametrov v špecifických podmienkach, ktoré nie sú dostatočne pokryté existujúcou literatúrou.
+Na základe hĺbkovej analýzy teoretických vlastností technológie \textbf{Wi-Fi HaLow} a jej komparácie s konkurenčnými LPWAN štandardmi (kapitola \ref{sec:lpwan_vs_others}) bol formulovaný návrh experimentálneho výskumu. Primárnym cieľom nie je iba samotná implementácia technológie, ale predovšetkým \textbf{empirická verifikácia jej prenosových parametrov} v špecifických podmienkach, ktoré nie sú dostatočne pokryté v existujúcej odbornej literatúre.
 
-\subsection{Vedecké ciele a hypotézy}
-Hlavným cieľom výskumu je kvantifikovať vplyv fyzických prekážok a elektromagnetického rušenia na priepustnosť a latenciu siete IEEE 802.11ah v porovnaní so štandardom LoRaWAN.
+\subsection{Vedecké ciele}
+Hlavným vedeckým cieľom je kvantifikovať vplyv \textbf{fyzických prekážok} a \textbf{elektromagnetického rušenia} na priepustnosť a latenciu siete štandardu IEEE 802.11ah v priamom porovnaní s technológiou \textbf{LoRaWAN}.
 
-\noindent Stanovujeme nasledujúce výskumné otázky a hypotézy:
-\begin{itemize}
-    \item \textbf{Hypotéza H1:} V prostredí s vysokou hustotou prekážok (železobetónové konštrukcie) vykáže Wi-Fi HaLow pokles priepustnosti o menej ako 40 \% oproti referenčnému meraniu v priamej viditeľnosti (LOS), zatiaľ čo latencia zostane pod hranicou 100 ms.
-    \item \textbf{Hypotéza H2:} Energetická efektivita mechanizmu Target Wake Time (TWT) pri HaLow prekoná režim spánku LoRaWAN triedy A pri intervaloch odosielania dát kratších ako 60 sekúnd.
-\end{itemize}
-
-\subsection{Metodika výskumu (Priebeh)}
-Výskum bude prebiehať v troch fázach, pričom kombinuje simulačné modelovanie s fyzickým meraním na reálnom hardvéri.
+\subsection{Metodika výskumu}
+Experimentálny výskum bude realizovaný v dvoch nadväzujúcich fázach, ktoré kombinujú simulačné modelovanie s fyzickým meraním na reálnom hardvéri (testbed).
 
 \subsubsection*{Fáza 1: Simulačné modelovanie}
-V prvej fáze bude vytvorený topologický model siete v prostredí \textbf{NS-3 (Network Simulator 3)} s modulom pre 802.11ah.
+V prvej fáze bude vytvorený topologický model siete v prostredí \textbf{NS-3 (Network Simulator 3)} s implementovaným modulom pre 802.11ah.
 \begin{itemize}
-    \item \textbf{Simulačný scenár:} Hviezdicová topológia s jedným prístupovým bodom (AP) a variabilným počtom staníc (STA) od 10 do 1000.
-    \item \textbf{Sledované parametre:} Bude sa simulovať zaťaženie siete (Network Load) a sledovať miera stratených paketov (Packet Error Rate - PER) pri kolíziách.
+    \item \textbf{Simulačný scenár:} Hviezdicová topológia (Star Topology) s jedným prístupovým bodom (AP) a variabilným počtom koncových staníc (STA) v rozsahu \textbf{10 až 1000 zariadení}.
+    \item \textbf{Sledované parametre:} Simulácia sa zameria na \textbf{zaťaženie siete} (Network Load) a analýzu miery stratených paketov (\textbf{Packet Error Rate -- PER}) v dôsledku kolízií.
 \end{itemize}
 
 \subsubsection*{Fáza 2: Experimentálne meranie (Testbed)}
-Pre fyzické merania bude zostavené testovacie prostredie pozostávajúce z modulov (napr. Newracom alebo Alfa Network) operujúcich vo frekvenčnom pásme 868 MHz (EU).
-Merania budú prebiehať v dvoch prostrediach:
-\begin{enumerate}
-    \item \textbf{Laboratórne podmienky (Interiér):} Testovanie penetrácie signálu cez steny rôznej hrúbky (tehla, betón).
-    \item \textbf{Exteriér (Areál STU):} Meranie maximálneho dosahu pri zachovaní minimálnej priepustnosti 150 kbps.
-\end{enumerate}
-
-\subsection{Metriky a zber dát}
-Kľúčovým aspektom vedeckej časti je presný zber dát. Počas experimentov budú zaznamenávané nasledujúce metriky:
+Kľúčovým aspektom vedeckej časti je zber presných dát v reálnom čase. Počas experimentov budú zaznamenávané nasledujúce metriky kvality služby (QoS):
 \begin{itemize}
     \item \textbf{RSSI (Received Signal Strength Indicator):} Úroveň prijatého signálu [dBm].
-    \item \textbf{SNR (Signal-to-Noise Ratio):} Odstup signálu od šumu [dB].
-    \item \textbf{Throughput:} Reálna dátová priepustnosť na aplikačnej vrstve (merané pomocou nástroja Iperf).
-    \item \textbf{Latency:} Obojsmerné oneskorenie (RTT) pre ICMP pakety.
+    \item \textbf{SNR (Signal-to-Noise Ratio):} Odstup užitočného signálu od šumu [dB].
+    \item \textbf{Throughput (Priepustnosť):} Reálna dátová priepustnosť na aplikačnej vrstve, meraná pomocou nástroja \textbf{Iperf}.
+    \item \textbf{Latency (Latencia):} Obojsmerné oneskorenie (RTT) pre ICMP pakety.
 \end{itemize}
 
-\section{Predpokladané výstupy a prínos výskumu}
-\label{sec:vystupy}
-
-Realizácia navrhovaného výskumu prinesie nasledujúce konkrétne výstupy, ktoré presahujú rámec bežnej implementácie:
+Pre fyzické merania bude zostavené testovacie prostredie pozostávajúce z hardvérových modulov (napr. \textit{Newracom} alebo \textit{Alfa Network}) operujúcich v sub-gigahertzovom frekvenčnom pásme \textbf{868 MHz (EU)}. Merania budú prebiehať v dvoch odlišných prostrediach:
 
 \begin{enumerate}
-    \item \textbf{Komparatívna matica výkonnosti:} Súbor nameraných dát porovnávajúci HaLow a LoRaWAN v identických podmienkach. Tento výstup potvrdí alebo vyvráti marketingové tvrdenia výrobcov čipov.
-    \item \textbf{Model útlmu signálu:} Matematický model popisujúci šírenie signálu 802.11ah v špecifickom prostredí univerzitného kampusu, ktorý môže byť použitý pre plánovanie IoT sietí v podobných budovách.
-    \item \textbf{Odporúčania pre konfiguráciu:} Sada optimálnych parametrov (MCS index, Guard Interval) pre rôzne scenáre nasadenia (statické senzory vs. video stream), overená experimentálne.
+    \item \textbf{Laboratórne podmienky (Interiér/NLOS):} Testovanie penetrácie signálu cez steny s rôznou materiálovou charakteristikou (tehla, železobetón).
+    \item \textbf{Exteriér (Areál STU/LOS):} Meranie maximálneho efektívneho dosahu pri zachovaní minimálnej referenčnej priepustnosti \textbf{150 kbps}.
 \end{enumerate}
 
-Výsledky výskumu budú slúžiť ako podklad pre návrh robustnej senzorovej siete pre monitorovanie environmentálnych veličín v rámci "Smart Campus" riešení, pričom poskytnú vedecky podložené argumenty pre výber komunikačnej technológie.
+\subsection{Prínosy a očakávané výsledky}
+Pre výskum stanovujeme nasledujúce vedecké otázky a hypotézy:
+\begin{itemize}
+    \item \textbf{Hypotéza H1:} V prostredí s vysokou hustotou prekážok (železobetónové konštrukcie) vykáže Wi-Fi HaLow pokles priepustnosti o \textbf{menej ako 40\,\%} oproti referenčnému meraniu v priamej viditeľnosti (LOS), zatiaľ čo latencia zostane pod kritickou hranicou \textbf{100 ms}.
+    \item \textbf{Hypotéza H2:} Energetická efektivita mechanizmu \textbf{Target Wake Time (TWT)} pri štandarde HaLow prekoná režim spánku LoRaWAN (Trieda A) pri intervaloch odosielania dát kratších ako \textbf{60 sekúnd}.
+\end{itemize}
+
+\subsection{Predpokladané výstupy}
+\label{sec:vystupy}
+
+Realizácia navrhovaného výskumu prinesie konkrétne výstupy, ktoré presahujú rámec bežnej implementácie:
+
+\begin{enumerate}
+    \item \textbf{Komparatívna matica výkonnosti:} Komplexný súbor nameraných dát porovnávajúci HaLow a LoRaWAN v identických podmienkach. Tento výstup slúži na potvrdenie alebo vyvrátenie marketingových tvrdení výrobcov čipov.
+    \item \textbf{Model útlmu signálu:} Matematický model popisujúci šírenie signálu 802.11ah v špecifickom prostredí univerzitného kampusu, aplikovateľný pre plánovanie IoT sietí v budovách podobného typu.
+    \item \textbf{Odporúčania pre konfiguráciu:} Sada optimálnych parametrov (najmä \textbf{MCS index} a \textbf{Guard Interval}) pre rôzne scenáre nasadenia (napr. statické senzory vs. video stream), overená experimentálne.
+\end{enumerate}
+
+Výsledky výskumu budú slúžiť ako podklad pre návrh robustnej senzorovej siete pre monitorovanie environmentálnych veličín v rámci konceptu \textbf{,,Smart Campus``}, pričom poskytnú vedecky podložené argumenty pre výber vhodnej komunikačnej technológie.
 
 \newpage
 \bibliographystyle{unsrt}
